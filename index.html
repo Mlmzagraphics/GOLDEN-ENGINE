@@ -475,11 +475,11 @@
         </div>
 
         <div class="field" id="horaField">
-          <label>Horario del EA (hora servidor) <span class="val" id="lHoras">00:00–11:00</span></label>
+          <label>Horario del EA (hora servidor) <span class="val" id="lHoras">00:00–22:00</span></label>
           <div style="display:flex;gap:10px;align-items:center">
             <input type="range" id="horaInicio" min="0" max="23" step="1" value="0" style="flex:1">
             <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--faint)">a</span>
-            <input type="range" id="horaFin" min="0" max="24" step="1" value="11" style="flex:1">
+            <input type="range" id="horaFin" min="0" max="24" step="1" value="22" style="flex:1">
           </div>
           <p class="hint" id="horasHint"></p>
         </div>
@@ -496,7 +496,7 @@
               <button type="button" class="stp" data-t="mult" data-d="0.01">+</button>
             </span>
           </div>
-          <input type="range" id="mult" min="1.00" max="2.00" step="0.01" value="1.21">
+          <input type="range" id="mult" min="1.00" max="2.00" step="0.01" value="1.20">
         </div>
 
         <div class="field">
@@ -507,7 +507,7 @@
               <button type="button" class="stp" data-t="lote" data-d="0.01">+</button>
             </span>
           </div>
-          <input type="range" id="lote" min="0.01" max="5" step="0.01" value="0.1">
+          <input type="range" id="lote" min="0.01" max="5" step="0.01" value="0.01">
         </div>
 
         <div class="field">
@@ -1003,7 +1003,7 @@ function AN_hybridForecast(p, cyclesPerDayOverride){
 }
 
 // ================= ESTADO =================
-const S={capital:1000,leverage:100,lote:0.1,mult:1.21,gridPips:10,tpClasico:21,price:4000,oz:1,so:50,
+const S={capital:1000,leverage:100,lote:0.01,mult:1.20,gridPips:10,tpClasico:21,price:4000,oz:1,so:50,
   maxo:50,broker:'vt_ecn_cent',volKey:'media',ruinTarget:1,commission:0.06,horaInicio:0,horaFin:11};
 const $=id=>document.getElementById(id);
 const nf=n=>Math.round(n).toLocaleString('es-ES');
@@ -1303,8 +1303,8 @@ $('exportPdf').addEventListener('click',()=>{
 });
 $('reset').addEventListener('click',()=>{
   try{localStorage.removeItem(STORAGE_KEY);}catch(e){}
-  $('capital').value=1000;$('lote').value=0.1;$('mult').value=1.21;$('grid').value=10;$('tpClasico').value=21;
-  $('price').value=4000;$('maxo').value=50;$('so').value=50;$('commission').value=0.06;$('horaInicio').value=0;$('horaFin').value=11;S.leverage=100;S.oz=1;S.volKey='media';S.ruinTarget=1;
+  $('capital').value=1000;$('lote').value=0.01;$('mult').value=1.20;$('grid').value=10;$('tpClasico').value=21;
+  $('price').value=4000;$('maxo').value=50;$('so').value=50;$('commission').value=0.06;$('horaInicio').value=0;$('horaFin').value=22;S.leverage=100;S.oz=1;S.volKey='media';S.ruinTarget=1;
   $('goalDaily').value=0;$('goalMonthly').value=0;$('goalDD').value=0;
   [...$('levSegs').children].forEach(c=>c.classList.toggle('on',c.dataset.lev==='100'));
   [...$('ozSegs').children].forEach(c=>c.classList.toggle('on',c.dataset.oz==='1'));
