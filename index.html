@@ -252,8 +252,11 @@
 
   /* Solo evitamos cortes en unidades PEQUEÑAS, donde si tiene sentido */
   .stat,.fcell,.chip,.goalrow{break-inside:avoid;page-break-inside:avoid}
-  #goalCard,#horaField{break-inside:avoid;page-break-inside:avoid}
-  .keep-block{break-inside:avoid;page-break-inside:avoid}
+  /* Nota: #goalCard, #horaField y .keep-block YA NO fuerzan "no cortar" —
+     con bloques de altura variable (ej. objetivo financiero con 3 sugerencias)
+     esa regla podia hacer que el navegador REORDENE secciones enteras en vez
+     de solo cortar mal. Es preferible que, rara vez, un bloque mediano se corta
+     visualmente, a que el contenido aparezca en un orden incorrecto. */
   table{page-break-inside:auto}
   tr,td{background:var(--panel) !important}
   th{background:var(--panel2) !important;position:static !important;top:auto !important}
@@ -262,7 +265,7 @@
   tbody tr{break-inside:avoid !important;page-break-inside:avoid !important;page-break-after:auto}
 
   /* Compactar un poco para aprovechar mejor la hoja */
-  body{padding:16px 14px 26px !important}
+  body{padding:26px 22px 34px !important}
   header{margin-bottom:10px !important;padding-bottom:10px !important}
   .hero{padding:14px 16px !important;margin-bottom:10px !important}
   .card.pad{padding:12px !important}
