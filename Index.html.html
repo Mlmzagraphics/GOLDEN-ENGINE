@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Capital · Margen">
+<meta name="theme-color" content="#03060b">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAADCElEQVR4nN2WyU8UQRTGv1dV083QM4yABh0XIKKGxCVqMC44rtFoRgeRG0cTY+I/4MHEm9vNk3cPmmg84C4XosGgMWhIlLhGQpQoShgQWXqq6nkAjcIg0wY18UsfOtXd71dd9ep7jwrji/yhLyBMvxhO2FP+0MDg5zTR9BOYGWAFGtO0AwCASPyRuD/oXwDYWuMPW2snPjJaG3+YmQMDmK3xh6zOMLMXjSb31cVmFI4LZK2dX1a+M5mSUgVgeEVxknleSdnKQycWJOoAVX/gsGU+dvIMQhHpetLxpONJN6K84gsNjQOGq6q3Qbhj45NfIpTvFcUFAFgTLpqz8uCReRv3Qrmz4vNHGDW1+0vKKvjbL1rQsqq1iURCaxTPngchgy0RCHoYbAwcl6TKGJSXzt2ydbv9vobSSaVSBRHXGJAKBQeME4OA2pq9TqQARCAxa87c3Tt2ZHSOYacEAFrz2qrVlUuXs1BGqOrEpkULS43Jklq/CfjYmy6M5e9JJkU4mhcrrq1JAdzb1x/0yGcHKIU7Dx739H7Zs3vXzAUVS5av2rxh3cuOd4/aX4RUMED21xXhVefbWFskuXnNmvXVi8tLS4rzzzXcLiyIioBn/xd7YK43NROhfl8yuX1TekDfvtuiZGBrmfQDRdx8/+Hrzg/b1letqKx42Nbe/uyZDO65k8/I+F0drxub7joOCULDjZsDPd1sAufppACT8TP9ny5fumgt3nf33Lp2hQf7rNFBa1/2TSaAteaRwdbmptMnT3V1db19/kR4Mc5msb8DAMBsWfvG+MePHQVIuq7VPhDAqKcAjEIASMcduw9SBr7rL1Y0lQeSEv4IgRUgYPFzzlidUULkE2A1rMkRoABAiOHe7qfnz3a3tQjo1pbmM2cLWlvuCTb4oSsQ2m+8cTXd8+7N83YCI7d8Iq8oPvQ5DbDNjJBQIuQYrWE0pJJyvOmbjAYbUiGRg2Mwczg6Y2yTiYR0wqPDUkpMCD0qGVJT5MUE/Zd90fRKgTlQI5W7mBnMyglHAPpz7ftXpIQ54cm/xcQAAAAASUVORK5CYII=">
+<title>Modelo de Capital · Margen · Martingala Oro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --ink:#03060b; --panel:#080c13; --panel2:#0d131c; --edge:#1d2a3b;
+    --bone:#e9f2fb; --muted:#9db2ca; --faint:#5f7488;
+    --gold:#5cc2ff; --gold-deep:#3a9fe0; --gold-dim:#2b4b66; --gold-bright:#93d7ff;
+    --crimson:#8aa2c2; --crimson-deep:#3a4a60; --ok:#7fd0d6;
+    --glow:rgba(92,194,255,.55); --glow-soft:rgba(92,194,255,.30); --glow-white:rgba(233,242,251,.20);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:
+      radial-gradient(1100px 560px at 82% -14%, rgba(92,194,255,.10) 0%, transparent 58%),
+      radial-gradient(900px 500px at -8% 112%, rgba(92,194,255,.05) 0%, transparent 55%),
+      var(--ink);
+    color:var(--bone); font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+    line-height:1.5; min-height:100vh; padding:24px 16px 60px; -webkit-font-smoothing:antialiased;
+  }
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background-image:linear-gradient(rgba(92,194,255,.028) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(92,194,255,.028) 1px,transparent 1px);
+    background-size:48px 48px;
+    -webkit-mask:radial-gradient(circle at 50% 0%, #000 0%, transparent 75%);
+    mask:radial-gradient(circle at 50% 0%, #000 0%, transparent 75%)}
+  .wrap{max-width:1150px;margin:0 auto;position:relative;z-index:1;min-width:0}
+
+  header{border-bottom:1px solid var(--edge);padding-bottom:16px;margin-bottom:16px;
+    display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap}
+  .masthead{display:flex;flex-direction:column;gap:10px}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.32em;
+    text-transform:uppercase;color:var(--gold);text-shadow:0 0 14px var(--glow-soft)}
+  .wordmark{font-family:"Saira",sans-serif;font-weight:600;font-size:13px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+  .wordmark em{font-style:normal;font-weight:400;color:var(--gold-dim)}
+  .signature{position:fixed;right:14px;top:max(12px, env(safe-area-inset-top));z-index:5;
+    font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.08em;
+    color:var(--faint);background:rgba(8,12,19,.7);border:1px solid var(--edge);
+    border-radius:5px;padding:5px 10px;pointer-events:none;backdrop-filter:blur(2px)}
+  .signature b{color:var(--gold-deep);font-weight:500}
+  .context{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--muted);
+    border:1px solid var(--edge);border-radius:4px;padding:5px 10px;background:transparent;white-space:nowrap;
+    text-shadow:0 0 8px rgba(157,178,202,.16)}
+  .chip b{color:var(--gold);font-weight:500;text-shadow:0 0 10px var(--glow-soft)}
+
+  .hero{background:var(--panel);border:1px solid var(--edge);border-radius:10px;
+    padding:22px 24px;margin-bottom:14px;position:relative;overflow:hidden;
+    box-shadow:0 0 34px rgba(92,194,255,.06), inset 0 0 26px rgba(92,194,255,.02)}
+  .hero::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);
+    box-shadow:0 0 16px var(--glow),0 0 4px var(--gold)}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:250px;height:250px;
+    background:radial-gradient(circle,rgba(92,194,255,.12),transparent 70%);pointer-events:none}
+  .verdict{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;margin-bottom:10px;text-shadow:0 0 12px var(--glow-soft)}
+  .headline{font-family:"Saira",sans-serif;font-weight:700;line-height:.92;
+    font-size:clamp(44px,11vw,74px);letter-spacing:-.015em;color:var(--bone);
+    text-shadow:0 0 40px var(--glow),0 0 14px var(--glow-white)}
+  .headline .cur{color:var(--gold);font-size:.44em;vertical-align:.34em;font-weight:500;
+    text-shadow:0 0 20px var(--glow)}
+  .headline small{display:block;font-family:"IBM Plex Sans";font-weight:400;font-size:13px;
+    letter-spacing:0;color:var(--muted);margin-top:10px;text-transform:none;max-width:38ch;text-shadow:none}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:22px;
+    background:var(--edge);border:1px solid var(--edge);border-radius:8px;overflow:hidden}
+  @media(max-width:480px){.stats{grid-template-columns:1fr 1fr}}
+  .stat{background:var(--panel);padding:15px 16px}
+  .stat .k{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+  .stat .v{font-family:"Saira",sans-serif;font-size:26px;font-weight:600;color:var(--bone);
+    letter-spacing:.01em;text-shadow:0 0 16px var(--glow-white)}
+  .stat .v.gold{color:var(--gold);text-shadow:0 0 20px var(--glow)}
+  .stat .v.warn{color:var(--bone);text-shadow:0 0 16px var(--glow-white)}
+  .stat .sub{font-size:10.5px;color:var(--muted);margin-top:3px}
+
+  .grid{display:grid;grid-template-columns:334px 1fr;gap:14px;align-items:start}
+  .grid>div{min-width:0} /* sin esto, un hijo ancho (la tabla) puede forzar que toda
+    la pagina se ensanche en vez de solo activar el scroll horizontal interno */
+  @media(max-width:860px){.grid{grid-template-columns:1fr}}
+
+  .card{background:var(--panel);border:1px solid var(--edge);border-radius:10px;
+    box-shadow:inset 0 0 0 1px rgba(92,194,255,.02)}
+  .card.pad{padding:17px}
+  .card+.card{margin-top:12px}
+  .card-title{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--gold);margin-bottom:16px;padding-bottom:12px;
+    border-bottom:1px solid var(--edge);text-shadow:0 0 12px var(--glow-soft)}
+
+  .field{margin-bottom:16px}
+  .field:last-child{margin-bottom:0}
+  .field label,.field .lbl{display:flex;justify-content:space-between;align-items:baseline;
+    font-size:12.5px;color:var(--muted);margin-bottom:8px}
+  .field label .val{font-family:"IBM Plex Mono",monospace;color:var(--gold);font-size:13px;
+    font-weight:500;text-shadow:0 0 12px var(--glow-soft)}
+  .stepper{display:inline-flex;align-items:center;gap:8px}
+  .stepper .val{min-width:44px;text-align:center}
+  .stp{-webkit-appearance:none;appearance:none;width:26px;height:26px;border-radius:6px;
+    border:1px solid var(--gold-dim);background:var(--panel2);color:var(--gold);
+    font-family:"IBM Plex Mono",monospace;font-size:15px;line-height:1;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;transition:.12s;
+    box-shadow:0 0 10px rgba(92,194,255,.12);text-shadow:0 0 8px var(--glow-soft)}
+  .stp:active{transform:scale(.94)}
+  .stp:hover{border-color:var(--gold);box-shadow:0 0 16px var(--glow-soft)}
+
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:2px;
+    background:var(--edge);border-radius:0;outline:none;padding:0}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;
+    border-radius:2px;background:var(--gold);cursor:pointer;border:3px solid var(--ink);
+    box-shadow:0 0 0 1px var(--gold-deep),0 0 14px var(--glow)}
+  input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:2px;background:var(--gold);
+    cursor:pointer;border:3px solid var(--ink);box-shadow:0 0 0 1px var(--gold-deep),0 0 14px var(--glow)}
+
+  select,input[type=number]{width:100%;background:var(--panel2);border:1px solid var(--edge);
+    color:var(--bone);font-family:"IBM Plex Mono",monospace;font-size:14.5px;padding:11px 12px;
+    border-radius:6px;outline:none;-webkit-appearance:none;appearance:none}
+  select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'><path d='M2 4l4 4 4-4' stroke='%235cc2ff' stroke-width='1.5' fill='none' stroke-linecap='round'/></svg>");
+    background-repeat:no-repeat;background-position:right 12px center;padding-right:34px}
+  select:focus,input[type=number]:focus{border-color:var(--gold);box-shadow:0 0 12px var(--glow-soft)}
+
+  .segs{display:flex;gap:6px}
+  .segs.wrap4{flex-wrap:wrap}
+  .seg{flex:1;min-width:62px;text-align:center;font-family:"IBM Plex Mono",monospace;font-size:12px;
+    min-height:44px;display:flex;align-items:center;justify-content:center;
+    border:1px solid var(--edge);border-radius:6px;background:var(--panel2);
+    color:var(--muted);cursor:pointer;transition:.12s;user-select:none;-webkit-tap-highlight-color:transparent}
+  .seg:active{transform:scale(.98)}
+  .seg.on{background:var(--gold);color:#04121e;border-color:var(--gold);font-weight:600;
+    box-shadow:0 0 18px var(--glow)}
+
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+  .qchip{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted);
+    border:1px solid var(--edge);border-radius:5px;padding:8px 11px;background:var(--panel2);
+    cursor:pointer;transition:.12s;-webkit-tap-highlight-color:transparent}
+  .qchip:active{transform:scale(.97)}
+  .qchip.on{border-color:var(--gold);color:var(--gold);box-shadow:0 0 14px var(--glow-soft)}
+
+  .hint{font-size:11px;color:var(--faint);margin-top:8px;line-height:1.45}
+  .reset{width:100%;margin-top:2px;background:transparent;border:1px solid var(--gold-dim);
+    color:var(--gold);font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em;
+    text-transform:uppercase;min-height:46px;border-radius:6px;cursor:pointer;transition:.12s;
+    -webkit-tap-highlight-color:transparent;text-shadow:0 0 10px var(--glow-soft)}
+  .reset:active{background:rgba(92,194,255,.08);box-shadow:0 0 18px var(--glow-soft)}
+
+  .chart-card{padding:18px 14px 8px}
+  .chart-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;
+    padding:0 6px 10px;flex-wrap:wrap;margin-bottom:4px;border-bottom:1px solid var(--edge)}
+  .chart-head h3{font-family:"Saira",sans-serif;font-weight:600;font-size:16px;letter-spacing:.01em;
+    color:var(--bone);text-shadow:0 0 14px var(--glow-white)}
+  .legend{display:flex;gap:14px;font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--muted)}
+  .legend i{display:inline-block;width:13px;height:2px;vertical-align:middle;margin-right:5px}
+  #chart{display:block;width:100%;height:auto;margin-top:6px}
+  #chart path[stroke]{filter:drop-shadow(0 0 4px var(--glow))}
+  .cause{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);
+    padding:12px 8px 4px;border-top:1px solid var(--edge);margin-top:6px;line-height:1.5}
+  .cause b{color:var(--gold);text-shadow:0 0 10px var(--glow-soft)}
+
+  .tbl-card{margin-top:12px}
+  .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-height:360px;overflow-y:auto;border-radius:0 0 9px 9px}
+  table{width:100%;border-collapse:collapse;font-family:"IBM Plex Mono",monospace;font-size:12px;min-width:520px}
+  th{position:sticky;top:0;background:var(--panel2);color:var(--faint);font-weight:500;
+    text-align:right;padding:10px 12px;letter-spacing:.05em;font-size:9.5px;text-transform:uppercase;
+    border-bottom:1px solid var(--edge);white-space:nowrap}
+  th:first-child,td:first-child{text-align:left}
+  td{padding:9px 12px;text-align:right;border-bottom:1px solid rgba(29,42,59,.6);color:var(--bone);
+    white-space:nowrap;text-shadow:0 0 7px rgba(233,242,251,.07)}
+  tr:last-child td{border-bottom:none}
+  td.dim{color:var(--faint);text-shadow:none}
+  .swipe-hint{font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--faint);
+    padding:10px 18px 0;display:none}
+  @media(max-width:560px){.swipe-hint{display:block}}
+
+  .foot{font-size:11px;color:var(--faint);margin-top:22px;line-height:1.55;
+    border-top:1px solid var(--edge);padding-top:16px}
+  .foot b{color:var(--muted)}
+
+
+  /* --- añadidos para el panel de pronostico / objetivo financiero --- */
+  .fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--edge);
+    border:1px solid var(--edge);border-radius:8px;overflow:hidden;margin-top:4px}
+  @media(max-width:760px){.fgrid{grid-template-columns:repeat(2,1fr)}}
+  .fcell{background:var(--panel);padding:14px 15px}
+  .fcell .k{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--faint);margin-bottom:7px;line-height:1.3;min-height:23px}
+  .fcell .v{font-family:"Saira",sans-serif;font-size:19px;font-weight:600;color:var(--bone)}
+  .fcell .v.accent{color:var(--gold);text-shadow:0 0 14px var(--glow-soft)}
+  .fcell .sub{font-size:10px;color:var(--muted);margin-top:4px;line-height:1.4}
+
+  .insight{background:rgba(92,194,255,.045);border:1px solid var(--edge);border-left:2px solid var(--gold);
+    border-radius:0 8px 8px 0;padding:13px 16px;margin-top:14px;font-size:12px;color:var(--muted);line-height:1.55}
+  .insight b{color:var(--gold)}
+
+  .goalrow{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;margin-bottom:12px}
+  .goalrow:last-child{margin-bottom:0}
+  .goalrow input{max-width:150px}
+  .badge{font-family:"IBM Plex Mono",monospace;font-size:10.5px;padding:6px 11px;border-radius:5px;
+    border:1px solid var(--edge);white-space:nowrap;text-align:center}
+  .badge.hit{color:var(--gold);border-color:var(--gold-dim);text-shadow:0 0 8px var(--glow-soft)}
+  .badge.miss{color:var(--muted)}
+
+  .subhead{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--faint);margin:18px 0 10px;padding-top:14px;border-top:1px solid var(--edge)}
+  .subhead:first-child{margin-top:0;padding-top:0;border-top:none}
+
+  details.adv{margin-top:16px}
+  details.adv summary{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--gold);cursor:pointer;list-style:none;padding:10px 0;
+    border-top:1px solid var(--edge);user-select:none}
+  details.adv summary::-webkit-details-marker{display:none}
+  details.adv summary::before{content:'+ '; color:var(--gold-dim)}
+  details.adv[open] summary::before{content:'\2212 '}
+  details.adv .field{margin-top:14px}
+/* ===================== EXPORTAR A PDF / IMPRIMIR ===================== */
+/* Fuerza a que el navegador conserve colores de fondo y sombras al imprimir
+   o exportar a PDF, en vez de aplanarlo todo a blanco/negro. */
+*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;color-adjust:exact !important}
+
+@media print{
+  @page{ margin:0; } /* @page{background} no lo respetan los navegadores: el borde
+    blanco venia de aqui. Sin margen de pagina, el fondo oscuro del body llega
+    hasta el borde real de la hoja; el padding del body de abajo da el aire. */
+  html,body{background:var(--ink) !important;}
+  body::before{display:none} /* la rejilla de fondo no aporta en papel, se quita para legibilidad */
+  .wrap{max-width:100%}
+  .signature{position:static !important;display:inline-block;margin-top:14px;background:transparent !important;border:none;box-shadow:none}
+  .jsflag{display:none}
+  .reset{display:none}
+  details.adv{display:none} /* supuestos avanzados: no aportan a un reporte de resultados */
+  .grid{grid-template-columns:1fr !important;} /* una sola columna: evita que se corte contenido en la hoja */
+
+  /* Nada de "evitar corte" en contenedores grandes: forzarlos a no partirse
+     es lo que dejaba paginas casi vacias (el bloque entero saltaba de pagina
+     si no cabia completo). Dejamos que fluyan con normalidad. */
+  .card,.hero{box-shadow:none !important}
+  .hero::after{display:none} /* el circulo decorativo no se recorta bien al imprimir */
+  .hero::before{display:none}
+
+  /* Solo evitamos cortes en unidades PEQUEÑAS, donde si tiene sentido */
+  .stat,.fcell,.chip,.goalrow{break-inside:avoid;page-break-inside:avoid}
+  #goalCard,#horaField{break-inside:avoid;page-break-inside:avoid}
+  table{page-break-inside:auto}
+  tr,td{background:var(--panel) !important}
+  th{background:var(--panel2) !important}
+  thead{display:table-header-group} /* repite el encabezado de columnas en cada pagina */
+  tr,td,th{break-inside:avoid !important;page-break-inside:avoid !important} /* ninguna fila se corta a la mitad */
+  tbody tr{break-inside:avoid !important;page-break-inside:avoid !important;page-break-after:auto}
+
+  /* Compactar un poco para aprovechar mejor la hoja */
+  body{padding:16px 14px 26px !important}
+  header{margin-bottom:10px !important;padding-bottom:10px !important}
+  .hero{padding:14px 16px !important;margin-bottom:10px !important}
+  .card.pad{padding:12px !important}
+  .card+.card{margin-top:8px !important}
+  .grid{gap:8px !important}
+  .fgrid{margin-top:4px !important}
+  .stat{padding:10px 12px !important}
+  .fcell{padding:10px 12px !important}
+
+  input[type=range]{display:none} /* el valor exacto ya se ve en el numero junto al campo */
+  .stp,.qchip,.seg{cursor:default}
+  .tbl-scroll{max-height:none !important;overflow:visible !important}
+}
+</style>
+
+<body>
+<div class="wrap">
+  <header>
+    <div class="masthead">
+      <div class="wordmark">GOLDEN <em>ENGINE</em></div>
+      <div class="eyebrow">Modelo cuantitativo · Gestión de capital</div>
+      <div class="jsflag" id="jsflag">Vista estática · el JavaScript no se está ejecutando</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+      <button type="button" id="exportPdf" class="reset" style="width:auto;margin:0;padding:9px 16px">⭳ Exportar a PDF</button>
+      <div class="context" id="context"></div>
+    </div>
+  </header>
+
+  <!-- ============ PRONOSTICO (motor probabilistico) ============ -->
+  <div class="hero">
+    <div class="verdict" id="verdict"></div>
+    <div class="headline"><span class="cur" id="hProfitSign">$</span><span id="hProfit">0</span>
+      <small id="hProfitSub">profit esperado por ciclo, calibrado con tu historial real (incluye comisión)</small>
+    </div>
+
+    <div class="subhead">Pronóstico por ciclo</div>
+    <div class="fgrid">
+      <div class="fcell"><div class="k">DD esperado</div><div class="v" id="fDD">$0</div><div class="sub">pérdida flotante promedio al resolver</div></div>
+      <div class="fcell"><div class="k">Máximo margen usado</div><div class="v" id="fMargin">$0</div><div class="sub" id="fMarginSub">promedio ponderado</div></div>
+      <div class="fcell"><div class="k">Número medio de operaciones</div><div class="v accent" id="fNOrders">0</div><div class="sub">por ciclo</div></div>
+      <div class="fcell"><div class="k">Mayor basket (percentil 95)</div><div class="v accent" id="fMayor">0</div><div class="sub">órdenes en el 5% de ciclos más profundos</div></div>
+    </div>
+
+    <div class="subhead">Capital y horizonte</div>
+    <div class="fgrid">
+      <div class="fcell">
+        <div class="k">Capital mínimo necesario</div>
+        <div class="v accent" id="fCapMin">$0</div>
+        <div class="sub">para P(ruina) ≤ <span id="fCapMinTarget">1%</span> por ciclo</div>
+      </div>
+      <div class="fcell">
+        <div class="k">Probabilidad de supervivencia</div>
+        <div class="v accent" id="fSurvMonth">0%</div>
+        <div class="sub" id="fSurvSub">a 1 mes, sin tocar stop-out</div>
+      </div>
+      <div class="fcell">
+        <div class="k">Profit esperado / día</div>
+        <div class="v" id="fProfitDay">$0</div>
+        <div class="sub" id="fCyclesDay">0 ciclos/día (est.)</div>
+      </div>
+      <div class="fcell">
+        <div class="k">Profit esperado / mes</div>
+        <div class="v" id="fProfitMonth">$0</div>
+        <div class="sub">21 días operativos</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card pad" id="goalCard">
+    <div class="card-title">Objetivo financiero</div>
+    <div class="goalrow">
+      <div class="field" style="margin:0">
+        <label>Beneficio mínimo diario (USD)</label>
+        <input type="number" id="goalDaily" min="0" step="1" value="0" inputmode="numeric">
+      </div>
+      <span class="badge" id="badgeDaily">—</span>
+    </div>
+    <p class="hint" id="suggDaily" style="display:none;margin-top:-6px;margin-bottom:12px"></p>
+
+    <div class="goalrow">
+      <div class="field" style="margin:0">
+        <label>Beneficio mensual objetivo (USD)</label>
+        <input type="number" id="goalMonthly" min="0" step="10" value="0" inputmode="numeric">
+      </div>
+      <span class="badge" id="badgeMonthly">—</span>
+    </div>
+    <p class="hint" id="suggMonthly" style="display:none;margin-top:-6px;margin-bottom:12px"></p>
+
+    <div class="goalrow">
+      <div class="field" style="margin:0">
+        <label>Drawdown máximo aceptable (USD)</label>
+        <input type="number" id="goalDD" min="0" step="10" value="0" inputmode="numeric">
+      </div>
+      <span class="badge" id="badgeDD">—</span>
+    </div>
+    <p class="hint" id="suggDD" style="display:none;margin-top:-6px;margin-bottom:12px"></p>
+    <p class="hint">Deja un campo en 0 para no evaluarlo. Las sugerencias ajustan solo el lote inicial, dejando el resto igual. El drawdown se evalúa en el percentil 95 (mayor basket), no el promedio.</p>
+  </div>
+
+  <div class="grid">
+    <!-- ============ CONTROLES ============ -->
+    <div>
+      <div class="card pad">
+        <div class="card-title">Bróker y cuenta</div>
+
+        <div class="field">
+          <label>Bróker / tipo de cuenta</label>
+          <select id="broker">
+            <option value="vt_ecn_cent">VT Markets · ECN Cent</option>
+            <option value="vt_ecn_std">VT Markets · ECN Estándar</option>
+            <option value="vt_stp">VT Markets · STP</option>
+            <option value="custom">Otro / Personalizado</option>
+          </select>
+          <p class="hint" id="brokerHint"></p>
+        </div>
+
+        <div class="field">
+          <label>Capital real (USD) <span class="val" id="lCapital">$1.000</span></label>
+          <input type="number" id="capital" min="50" max="1000000" step="50" value="1000" inputmode="numeric">
+          <div class="chips" id="capChips">
+            <button type="button" class="qchip" data-cap="1000">1k</button>
+            <button type="button" class="qchip" data-cap="5000">5k</button>
+            <button type="button" class="qchip" data-cap="10000">10k</button>
+            <button type="button" class="qchip" data-cap="25000">25k</button>
+            <button type="button" class="qchip" data-cap="50000">50k</button>
+            <button type="button" class="qchip" data-cap="100000">100k</button>
+          </div>
+          <p class="hint" id="centHint"></p>
+        </div>
+
+        <div class="field">
+          <label>Apalancamiento</label>
+          <div class="segs wrap4" id="levSegs">
+            <button type="button" class="seg on" data-lev="100">1:100</button>
+            <button type="button" class="seg" data-lev="200">1:200</button>
+            <button type="button" class="seg" data-lev="300">1:300</button>
+            <button type="button" class="seg" data-lev="500">1:500</button>
+            <button type="button" class="seg" data-lev="1000">1:1000</button>
+            <button type="button" class="seg" data-lev="2000">1:2000</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Contrato · oz por 1.0 lote <span class="val" id="lOz">1.0</span></label>
+          <div class="segs" id="ozSegs">
+            <button type="button" class="seg on" data-oz="1">Cent · 1 oz</button>
+            <button type="button" class="seg" data-oz="100">Estándar · 100 oz</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Precio del oro (USD) <span class="val" id="lPrice">$4.000</span></label>
+          <input type="range" id="price" min="1500" max="6000" step="50" value="4000">
+        </div>
+
+        <div class="field" id="horaField">
+          <label>Horario del EA (hora servidor) <span class="val" id="lHoras">00:00–11:00</span></label>
+          <div style="display:flex;gap:10px;align-items:center">
+            <input type="range" id="horaInicio" min="0" max="23" step="1" value="0" style="flex:1">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--faint)">a</span>
+            <input type="range" id="horaFin" min="0" max="24" step="1" value="11" style="flex:1">
+          </div>
+          <p class="hint" id="horasHint"></p>
+        </div>
+      </div>
+
+      <div class="card pad">
+        <div class="card-title">Estrategia (EA)</div>
+
+        <div class="field">
+          <div class="lbl">Multiplicador
+            <span class="stepper">
+              <button type="button" class="stp" data-t="mult" data-d="-0.01">&minus;</button>
+              <span class="val" id="lMult">1.30</span>
+              <button type="button" class="stp" data-t="mult" data-d="0.01">+</button>
+            </span>
+          </div>
+          <input type="range" id="mult" min="1.00" max="2.00" step="0.01" value="1.21">
+        </div>
+
+        <div class="field">
+          <div class="lbl">Lote inicial
+            <span class="stepper">
+              <button type="button" class="stp" data-t="lote" data-d="-0.01">&minus;</button>
+              <span class="val" id="lLote">0.01</span>
+              <button type="button" class="stp" data-t="lote" data-d="0.01">+</button>
+            </span>
+          </div>
+          <input type="range" id="lote" min="0.01" max="5" step="0.01" value="0.1">
+        </div>
+
+        <div class="field">
+          <div class="lbl">Distancia entre órdenes (pips)
+            <span class="stepper">
+              <button type="button" class="stp" data-t="grid" data-d="-1">&minus;</button>
+              <span class="val" id="lGrid">10 pips</span>
+              <button type="button" class="stp" data-t="grid" data-d="1">+</button>
+            </span>
+          </div>
+          <input type="range" id="grid" min="1" max="100" step="1" value="10">
+          <p class="hint" id="gridHint"></p>
+        </div>
+
+        <div class="field">
+          <div class="lbl">Distancia TP clásica (pips)
+            <span class="stepper">
+              <button type="button" class="stp" data-t="tpClasico" data-d="-1">&minus;</button>
+              <span class="val" id="lTp">21 pips</span>
+              <button type="button" class="stp" data-t="tpClasico" data-d="1">+</button>
+            </span>
+          </div>
+          <input type="range" id="tpClasico" min="1" max="200" step="1" value="21">
+          <p class="hint" id="tpHint"></p>
+        </div>
+
+        <div class="field">
+          <label>Máximo operaciones <span class="val" id="lMax">50</span></label>
+          <input type="range" id="maxo" min="5" max="50" step="1" value="50">
+        </div>
+
+        <button type="button" class="reset" id="reset">↺ Restaurar preset oficial</button>
+
+        <details class="adv">
+          <summary>Supuestos del modelo probabilístico</summary>
+          <div class="field">
+            <label>Escenario de volatilidad del oro</label>
+            <div class="segs" id="volSegs">
+              <button type="button" class="seg" data-vol="baja">Baja · 0,5× frecuencia</button>
+              <button type="button" class="seg on" data-vol="media">Media · calibrado real</button>
+              <button type="button" class="seg" data-vol="alta">Alta · 2× frecuencia</button>
+            </div>
+            <p class="hint">"Media" usa los ciclos/día medidos directamente en tu historial real (104,93/día sobre 14,5 días). Baja/Alta simulan un mercado más lento o más rápido, para explorar sensibilidad. No afectan la probabilidad de ruina por ciclo (esa es siempre teórica).</p>
+          </div>
+          <div class="field">
+            <label>Stop-out % (solo bróker "Personalizado") <span class="val" id="lSo">50%</span></label>
+            <input type="range" id="so" min="0" max="100" step="5" value="50">
+          </div>
+          <div class="field">
+            <label>Comisión por lote (USD, round-turn) <span class="val" id="lComm">$6,00</span></label>
+            <input type="range" id="commission" min="0" max="1" step="0.01" value="0.06">
+            <p class="hint">Calibrada con tu historial real de cuenta (32240565): $0,06/lote confirmado en 4.637 órdenes sobre 14,5 días, sin excepción. (Nota: en una revisión anterior de este simulador se mostró por error $6,00 — confusión de unidades USC/USD, ya corregida.)</p>
+          </div>
+          <div class="field">
+            <label>Objetivo de riesgo para capital mínimo
+              <span class="stepper">
+                <input type="number" id="ruinTargetCustom" value="1" min="0.001" max="50" step="0.01"
+                  style="width:76px;text-align:right;padding:6px 8px;font-size:13px" inputmode="decimal">
+                <span class="val" style="min-width:auto">%</span>
+              </span>
+            </label>
+            <div class="segs wrap4" id="ruinTargetSegs">
+              <button type="button" class="seg" data-rt="5">≤5%</button>
+              <button type="button" class="seg on" data-rt="1">≤1%</button>
+              <button type="button" class="seg" data-rt="0.1">≤0,1%</button>
+              <button type="button" class="seg" data-rt="0.01">≤0,01%</button>
+            </div>
+            <p class="hint">Usa los botones para valores típicos o escribe cualquier porcentaje exacto arriba.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- ============ DETALLE DETERMINISTA (peor caso) ============ -->
+    <div>
+      <div class="card chart-card">
+        <div class="chart-head">
+          <h3>Escenario determinista extremo</h3>
+          <div class="legend">
+            <span><i style="background:var(--gold)"></i>Equity</span>
+            <span><i style="background:var(--crimson)"></i>Umbral stop-out</span>
+          </div>
+        </div>
+
+        <div class="stats" style="margin:2px 6px 14px">
+          <div class="stat"><div class="k">Techo de órdenes</div><div class="v gold" id="sOrders">0</div><div class="sub" id="sOrdersSub">de 50 permitidas</div></div>
+          <div class="stat"><div class="k">Excursión al stop-out</div><div class="v" id="sStopX">$0</div><div class="sub">movimiento del oro en contra</div></div>
+          <div class="stat"><div class="k">Pérdida en stop-out</div><div class="v warn" id="sLoss">$0</div><div class="sub" id="sLossSub">% del capital</div></div>
+        </div>
+
+        <div id="chart"></div>
+        <div class="cause" id="cause"></div>
+      </div>
+
+      <div class="card tbl-card">
+        <div class="card-title" style="padding:16px 18px 0">Canasto orden por orden</div>
+        <div class="swipe-hint">← desliza para ver todas las columnas →</div>
+        <div class="tbl-scroll">
+          <table>
+            <thead><tr>
+              <th>Orden</th><th>Mov. $</th><th>Lote</th><th>Lotes ac.</th>
+              <th>Margen us.</th><th>P. flot.</th><th>Equity</th><th>Nivel %</th><th>P(TP aquí)</th>
+            </tr></thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="foot" id="foot"></p>
+    </div>
+  </div>
+
+  <div class="card pad" style="margin-top:12px">
+    <div class="card-title">Metodología y calibración con historial real (info adicional)</div>
+    <div class="insight" id="insight" style="border:none;background:transparent;padding:0;margin-top:0"></div>
+  </div>
+</div>
+
+<div class="signature">designed by <b>Mr. Melo</b></div>
+
+<script>
+// ================= MOTOR DETERMINISTA (peor caso, validado) =================
+function lotAtLevel(n,lots,mult){return Math.round(lots*Math.pow(mult,n)*100)/100;}
+function stopoutX(A,B,C,price,lev,so){const d=A*(1-so/lev);if(d<=0)return Infinity;return (C+B-so*A*price/lev)/d;}
+function simulate(p){
+  let orders=[],realized=0,trace=[],stopX=null,cause=null,broke=false;
+  const lot1=lotAtLevel(0,p.lotsInicial,p.mult);
+  orders.push({e:0,lot:lot1,oz:lot1*p.ozPerLot});
+  const totals=()=>{let A=0,B=0;for(const o of orders){A+=o.oz;B+=o.oz*o.e;}return[A,B];};
+  for(let k=2;k<=p.maxOrdenes;k++){
+    const e_k=(k-1)*p.grid; let [A,B]=totals(); const C=p.capital-realized;
+    const xs=stopoutX(A,B,C,p.price,p.leverage,p.stopOut);
+    if(xs<=e_k+1e-9){stopX=xs;cause="stopout_before";broke=true;break;}
+    const lot_k=lotAtLevel(k-1,p.lotsInicial,p.mult), oz_k=lot_k*p.ozPerLot, priceNow=p.price-e_k;
+    const floatingLoss=A*e_k-B, equity=C-floatingLoss, usedMargin=A*priceNow/p.leverage;
+    const freeMargin=equity-usedMargin, marginNew=oz_k*priceNow/p.leverage;
+    const marginLevel=usedMargin>0?equity/usedMargin*100:Infinity;
+    let cum=0;for(const o of orders)cum+=o.lot;
+    trace.push({order:k-1,e:e_k,lot:orders[orders.length-1].lot,cumLots:Math.round(cum*100)/100,usedMargin,floatingLoss,equity,marginLevel,freeMargin});
+    if(freeMargin<marginNew){cause="no_margin";stopX=stopoutX(A,B,C,p.price,p.leverage,p.stopOut);broke=true;break;}
+    orders.push({e:e_k,lot:lot_k,oz:oz_k});
+  }
+  if(!broke){let [A,B]=totals();const C=p.capital-realized;stopX=stopoutX(A,B,C,p.price,p.leverage,p.stopOut);cause="max_orders";}
+  const [A,B]=totals();
+  const floatingAtSO=(stopX!==null&&isFinite(stopX))?A*stopX-B:null;
+  let cumTot=0;for(const o of orders)cumTot+=o.lot;
+  const curve=[]; const xEnd=(stopX&&isFinite(stopX))?stopX*1.08:p.maxOrdenes*p.grid; const N=180;
+  for(let i=0;i<=N;i++){const x=xEnd*i/N;let a=0,b=0;for(const o of orders){if(o.e<=x+1e-9){a+=o.oz;b+=o.oz*o.e;}}
+    curve.push({x,eq:(p.capital-realized)-(a*x-b)});}
+  return {ordersOpened:orders.length,stopX,cause,trace,orders,curve,xEnd,
+    totalLots:Math.round(cumTot*100)/100,floatingAtSO:floatingAtSO!==null?Math.round(floatingAtSO*100)/100:null};
+}
+
+// ================= MOTOR ANALITICO PROBABILISTICO (validado en Python/Node) =================
+const AN_OFFICIAL_1_50=[21,21,21,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,
+  61,61,63,63,63,65,65,65,67,67,67,69,69,69,71,71,71,73,73,73,75,75,75,77,77,77];
+
+function AN_tpSchedule(tpClassicPips,hybridStart){
+  const s=AN_OFFICIAL_1_50.slice();
+  for(let n=1;n<=hybridStart;n++) s[n-1]=tpClassicPips;
+  return s;
+}
+function AN_lot(n,lotsInicial,mult){return Math.round(lotsInicial*Math.pow(mult,n-1)*100)/100;}
+function AN_stopoutX(A,B,C,price,lev,so){const d=A*(1-so/lev);if(d<=0)return Infinity;return (C+B-so*A*price/lev)/d;}
+
+function AN_buildLevels(p){
+  const {capital,leverage,price,ozPerLot,lotsInicial,mult,maxOrdenes,gridPips,tpClassicPips,
+         stopOutPct,hybridStart}=p;
+  const gridUsd=gridPips*0.10;
+  const tpSched=AN_tpSchedule(tpClassicPips,hybridStart);
+  const so=stopOutPct/100;
+  let A=AN_lot(1,lotsInicial,mult)*ozPerLot, B=0.0;
+  let totalLots=AN_lot(1,lotsInicial,mult);
+  const levels=[]; let n=1;
+  while(true){
+    const e_n=(n-1)*gridUsd;
+    const b_n=tpSched[Math.min(n,50)-1]*0.10;
+    let a_n, canEscalate=false, xSoNow;
+    if(n<maxOrdenes){
+      const eNext=n*gridUsd;
+      xSoNow=AN_stopoutX(A,B,capital,price,leverage,so);
+      if(xSoNow<=eNext){a_n=xSoNow-e_n;canEscalate=false;}
+      else{
+        const lotNext=AN_lot(n+1,lotsInicial,mult), ozNext=lotNext*ozPerLot;
+        const priceNow=price-eNext, floatingLoss=A*eNext-B, equity=capital-floatingLoss;
+        const usedMargin=A*priceNow/leverage, freeMargin=equity-usedMargin;
+        const marginNew=ozNext*priceNow/leverage;
+        if(freeMargin>=marginNew){a_n=gridUsd;canEscalate=true;}
+        else{a_n=xSoNow-e_n;canEscalate=false;}
+      }
+    } else {xSoNow=AN_stopoutX(A,B,capital,price,leverage,so); a_n=xSoNow-e_n; canEscalate=false;}
+    a_n=Math.max(a_n,1e-9);
+    const floatingLossEn=A*e_n-B;
+    const lotCur=AN_lot(n,lotsInicial,mult);
+    levels.push({n,lot:lotCur,oz:lotCur*ozPerLot,e:e_n,A,B,a:a_n,b:b_n,totalLots,
+                 escalates:canEscalate,xSo:xSoNow,floatingLoss:floatingLossEn});
+    if(!canEscalate||n>=maxOrdenes) break;
+    n+=1;
+    const lotN=AN_lot(n,lotsInicial,mult), ozN=lotN*ozPerLot, eNnew=(n-1)*gridUsd;
+    A+=ozN; B+=ozN*eNnew; totalLots+=lotN;
+  }
+  return levels;
+}
+function AN_forecast(levels,commissionPerLot){
+  commissionPerLot = commissionPerLot||0;
+  const N=levels.length;
+  const pUp=new Array(N), pTp=new Array(N), PRuinFrom=new Array(N);
+  for(let i=N-1;i>=0;i--){
+    const {a,b}=levels[i]; const pu=b/(a+b), pt=a/(a+b);
+    pUp[i]=pu; pTp[i]=pt;
+    PRuinFrom[i]=(levels[i].escalates&&i+1<N)?pu*PRuinFrom[i+1]:pu;
+  }
+  const V=new Array(N); V[0]=1.0;
+  for(let i=1;i<N;i++) V[i]=levels[i-1].escalates?V[i-1]*pUp[i-1]:0.0;
+  const PTpAt=new Array(N), PRuinAt=new Array(N);
+  for(let i=0;i<N;i++){PTpAt[i]=V[i]*pTp[i]; PRuinAt[i]=levels[i].escalates?0.0:V[i]*pUp[i];}
+  const PRuinTotal=PRuinFrom[0];
+  const profitAt=levels.map(lv=>lv.A*lv.b-lv.floatingLoss-commissionPerLot*lv.totalLots);
+  const lossAt=levels.map(lv=>lv.A*lv.xSo-lv.B+commissionPerLot*lv.totalLots);
+  let EProfitCycle=0; for(let i=0;i<N;i++) EProfitCycle+=PTpAt[i]*profitAt[i]-PRuinAt[i]*lossAt[i];
+  let EOrders=0; for(let i=0;i<N;i++) EOrders+=V[i];
+  let EDd=0; for(let i=0;i<N;i++) EDd+=(PTpAt[i]+PRuinAt[i])*levels[i].floatingLoss;
+  return {PRuin:PRuinTotal,PTp:1-PRuinTotal,PTpAt,PRuinAt,V,EProfitCycle,EOrders,EDd,profitAt,lossAt};
+}
+function AN_cycleDays(levels,sigmaDay){
+  const N=levels.length; const V=new Array(N); V[0]=1.0;
+  for(let i=1;i<N;i++){const pUpPrev=levels[i-1].b/(levels[i-1].a+levels[i-1].b); V[i]=levels[i-1].escalates?V[i-1]*pUpPrev:0.0;}
+  const s2=sigmaDay*sigmaDay; let t=0; for(let i=0;i<N;i++) t+=V[i]*(levels[i].a*levels[i].b)/s2;
+  return t;
+}
+function AN_percentile(V,q){for(let i=0;i<V.length;i++) if(V[i]<(1-q)) return i; return V.length;}
+function AN_fullForecast(p){
+  const levels=AN_buildLevels(p); const r=AN_forecast(levels,p.commissionPerLot);
+  const cycleDays=AN_cycleDays(levels,p.sigmaDay);
+  const cyclesPerDay=cycleDays>0?1/cycleDays:0;
+  const EProfitDay=r.EProfitCycle*cyclesPerDay, EProfitMonth=EProfitDay*21;
+  let EMargin=0;
+  for(let i=0;i<levels.length;i++){const w=r.PTpAt[i]+r.PRuinAt[i]; const priceNow=p.price-levels[i].e; EMargin+=w*(levels[i].A*priceNow/p.leverage);}
+  const mayorBasket=AN_percentile(r.V, 0.95);
+  return {levels,Nreal:levels.length,PRuin:r.PRuin,PTp:r.PTp,EOrders:r.EOrders,EProfitCycle:r.EProfitCycle,
+    EDd:r.EDd,EMargin,cycleDays,cyclesPerDay,EProfitDay,EProfitMonth,mayorBasket,PTpAt:r.PTpAt,PRuinAt:r.PRuinAt};
+}
+function AN_capitalMinimo(targetRuinPct,p,lo,hi,iters){
+  lo=lo||50; hi=hi||2000000; iters=iters||40;
+  const pruinAt=(cap)=>AN_forecast(AN_buildLevels(Object.assign({},p,{capital:cap}))).PRuin;
+  if(pruinAt(hi) > targetRuinPct/100) return null;
+  for(let it=0; it<iters; it++){const mid=(lo+hi)/2; if(pruinAt(mid)<=targetRuinPct/100) hi=mid; else lo=mid;}
+  return hi;
+}
+
+// ================= BRÓKERES =================
+const BROKERS={
+  vt_ecn_cent:{name:'VT Markets · ECN Cent', oz:1, so:50, cent:true,
+    hint:'Verificado: 1 lote cent = 0.01 lote estándar = 1 oz. Stop-out 50%, margin call 80%.'},
+  vt_ecn_std:{name:'VT Markets · ECN Estándar', oz:100, so:50, cent:false,
+    hint:'Cuenta estándar: 1 lote = 100 oz. Stop-out 50%, margin call 80%.'},
+  vt_stp:{name:'VT Markets · STP', oz:100, so:20, cent:false,
+    hint:'Cuenta STP: 1 lote = 100 oz. Stop-out 20%, margin call 50%.'},
+  custom:{name:'Personalizado', cent:false,
+    hint:'Ajusta a mano el contrato (oz/lote) según la ficha de tu bróker.'}
+};
+const VOL_SCENARIOS={baja:40/1.596, media:70/1.596, alta:150/1.596};
+
+// ================= CALIBRACION EMPIRICA (historial real, cuenta 32240565) =================
+// 14.5 dias, 1521 ciclos reconstruidos. grid=10 pips, TP clasico=21 pips (coincide con preset vigente).
+const EMPIRICAL_N_DIST={1:455,2:371,3:240,4:147,5:118,6:57,7:41,8:31,9:26,10:13,
+  11:5,12:8,13:2,14:2,15:1,16:1,20:2,25:1};
+const EMPIRICAL_TOTAL=Object.values(EMPIRICAL_N_DIST).reduce((a,b)=>a+b,0); // 1521
+const EMPIRICAL_CYCLES_PER_DAY=104.93;
+const EMPIRICAL_GRID_PIPS=10, EMPIRICAL_TP_CLASSIC_PIPS=21;
+function empiricalP(n){ return (EMPIRICAL_N_DIST[n]||0)/EMPIRICAL_TOTAL; }
+
+// distribucion real de ciclos por hora de apertura (hora servidor), 24 valores, indice=hora
+const EMPIRICAL_HOURLY_DIST=[0,51,50,106,130,91,62,57,86,79,81,67,55,38,64,96,125,136,80,54,13,0,0,0];
+function hourlyCoverage(horaInicio,horaFin){
+  const hi=((horaInicio%24)+24)%24, hf=((horaFin%24)+24)%24;
+  let hours=[];
+  if(hf===hi) for(let h=0;h<24;h++) hours.push(h);
+  else if(hf>hi) for(let h=hi;h<hf;h++) hours.push(h);
+  else { for(let h=hi;h<24;h++) hours.push(h); for(let h=0;h<hf;h++) hours.push(h); }
+  const total=hours.reduce((s,h)=>s+EMPIRICAL_HOURLY_DIST[h],0);
+  return total/EMPIRICAL_TOTAL;
+}
+
+function AN_hybridEvCycle(levels, commissionPerLot){
+  const N=levels.length;
+  const r=AN_forecast(levels, commissionPerLot);
+  let pMassWithin=0; for(let n=1;n<N;n++) pMassWithin+=empiricalP(n);
+  const pTail=1-pMassWithin;
+  const profitAt=levels.map(lv=>lv.A*lv.b-lv.floatingLoss-commissionPerLot*lv.totalLots);
+  const lastIdx=N-1;
+  const lossLast=levels[lastIdx].A*levels[lastIdx].xSo-levels[lastIdx].B+commissionPerLot*levels[lastIdx].totalLots;
+  let ev=0; for(let n=1;n<N;n++) ev+=empiricalP(n)*profitAt[n-1];
+  if(pTail>1e-12){
+    const wtp=r.PTpAt[lastIdx]||0, wru=r.PRuinAt[lastIdx]||pTail;
+    const den=(wtp+wru)>0?(wtp+wru):1;
+    ev += pTail*((wtp/den)*profitAt[lastIdx]-(wru/den)*lossLast);
+  }
+  return ev;
+}
+
+function solveLotForDailyProfit(targetDaily, baseP, cyclesPerDay, lo, hi, scanPoints){
+  lo=lo||0.01; hi=hi||5.0; scanPoints=scanPoints||40;
+  const evDay=(lot)=>{
+    const levels=AN_buildLevels(Object.assign({},baseP,{lotsInicial:lot}));
+    return AN_hybridEvCycle(levels, baseP.commissionPerLot)*cyclesPerDay;
+  };
+  const pts=[]; for(let i=0;i<scanPoints;i++) pts.push(lo*Math.pow(hi/lo, i/(scanPoints-1)));
+  let bestI=0, bestVal=evDay(pts[0]);
+  for(let i=1;i<pts.length;i++){ const v=evDay(pts[i]); if(v>bestVal){bestVal=v; bestI=i;} }
+  const bestLot=pts[bestI];
+  if(bestVal < targetDaily) return {lot:null, ev:bestVal, status:'unreachable', bestLot};
+  let L=lo, R=bestLot;
+  if(evDay(L) >= targetDaily) return {lot:L, ev:evDay(L), status:'min', bestLot};
+  for(let it=0; it<50; it++){ const mid=(L+R)/2; if(evDay(mid) < targetDaily) L=mid; else R=mid; }
+  return {lot:R, ev:evDay(R), status:'ok', bestLot};
+}
+
+function solveLotForMaxDD(targetDD, baseP, lo, hi, scanPoints){
+  lo=lo||0.01; hi=hi||5.0; scanPoints=scanPoints||60;
+  const dd95=(lot)=>{
+    const levels=AN_buildLevels(Object.assign({},baseP,{lotsInicial:lot}));
+    const N=levels.length; let cum=0, mayor=N;
+    for(let n=1;n<N;n++){ cum+=empiricalP(n); if(cum>=0.95){mayor=n; break;} }
+    return levels[mayor-1].floatingLoss;
+  };
+  if(dd95(lo) > targetDD) return {lot:null, dd:dd95(lo), status:'unreachable'};
+  const pts=[]; for(let i=0;i<scanPoints;i++) pts.push(lo*Math.pow(hi/lo, i/(scanPoints-1)));
+  let lastOk=lo;
+  let firstBad=hi;
+  for(const x of pts){ if(dd95(x)<=targetDD) lastOk=x; else { firstBad=x; break; } }
+  let L=lastOk, R=firstBad;
+  for(let it=0; it<40; it++){ const mid=(L+R)/2; if(dd95(mid)<=targetDD) L=mid; else R=mid; }
+  return {lot:L, dd:dd95(L), status:'ok'};
+}
+
+function AN_hybridForecast(p, cyclesPerDayOverride){
+  const levels=AN_buildLevels(p);
+  const Nreal=levels.length;
+  const rTheo=AN_forecast(levels, p.commissionPerLot);
+
+  let pMassWithin=0; for(let n=1;n<Nreal;n++) pMassWithin+=empiricalP(n);
+  const pTailBeyond=1-pMassWithin;
+
+  const profitAt=levels.map(lv=>lv.A*lv.b-lv.floatingLoss-p.commissionPerLot*lv.totalLots);
+  const lastIdx=Nreal-1;
+  const lossAtNreal=levels[lastIdx].A*levels[lastIdx].xSo-levels[lastIdx].B+p.commissionPerLot*levels[lastIdx].totalLots;
+
+  let EProfit=0; for(let n=1;n<Nreal;n++) EProfit+=empiricalP(n)*profitAt[n-1];
+  if(pTailBeyond>1e-12){
+    const wTp=rTheo.PTpAt[lastIdx]||0, wRuin=rTheo.PRuinAt[lastIdx]||pTailBeyond;
+    const denom=(wTp+wRuin)>0?(wTp+wRuin):1;
+    EProfit += pTailBeyond*((wTp/denom)*profitAt[lastIdx] - (wRuin/denom)*lossAtNreal);
+  }
+  let EOrders=0; for(let n=1;n<Nreal;n++) EOrders+=empiricalP(n)*n;
+  EOrders += pTailBeyond*Nreal;
+
+  let cum=0, mayorBasket=Nreal;
+  for(let n=1;n<Nreal;n++){ cum+=empiricalP(n); if(cum>=0.95){mayorBasket=n; break;} }
+
+  const cpd = cyclesPerDayOverride!==undefined ? cyclesPerDayOverride : EMPIRICAL_CYCLES_PER_DAY;
+  const EProfitDay=EProfit*cpd, EProfitMonth=EProfitDay*21;
+  const calibracionValida = (p.gridPips===EMPIRICAL_GRID_PIPS && p.tpClassicPips===EMPIRICAL_TP_CLASSIC_PIPS);
+
+  return {Nreal, EProfitCycle:EProfit, EOrders, mayorBasket, cyclesPerDay:cpd,
+          EProfitDay, EProfitMonth, calibracionValida, pTailBeyond};
+}
+
+// ================= ESTADO =================
+const S={capital:1000,leverage:100,lote:0.1,mult:1.21,gridPips:10,tpClasico:21,price:4000,oz:1,so:50,
+  maxo:50,broker:'vt_ecn_cent',volKey:'media',ruinTarget:1,commission:0.06,horaInicio:0,horaFin:11};
+const $=id=>document.getElementById(id);
+const nf=n=>Math.round(n).toLocaleString('es-ES');
+const nf2=n=>n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2});
+
+function readInputs(){
+  S.capital=Math.max(1,+$('capital').value||0); S.lote=+$('lote').value; S.mult=+$('mult').value;
+  S.gridPips=+$('grid').value; S.tpClasico=+$('tpClasico').value; S.price=+$('price').value; S.maxo=+$('maxo').value;
+  S.commission=+$('commission').value;
+  S.horaInicio=+$('horaInicio').value; S.horaFin=+$('horaFin').value;
+}
+function syncLabels(){
+  $('lCapital').textContent='$'+nf(S.capital);
+  $('lLote').textContent=S.lote.toFixed(2);
+  $('lMult').textContent=S.mult.toFixed(2);
+  $('lComm').textContent='$'+S.commission.toFixed(2).replace('.',',');
+  const hf24 = S.horaFin===24?'24:00':String(S.horaFin).padStart(2,'0')+':00';
+  $('lHoras').textContent=String(S.horaInicio).padStart(2,'0')+':00–'+hf24;
+  const cov=hourlyCoverage(S.horaInicio,S.horaFin);
+  $('horasHint').textContent='Cobertura de la actividad real observada: '+(cov*100).toFixed(1)+'% del día ('+nf(EMPIRICAL_CYCLES_PER_DAY*cov)+' ciclos/día calibrados). Tu preset actual usa 00:00–11:00.';
+  $('lGrid').textContent=S.gridPips+' pips';
+  $('lTp').textContent=S.tpClasico+' pips';
+  $('lPrice').textContent='$'+nf(S.price);
+  $('lOz').textContent=S.oz==1?'1.0':'100';
+  $('lMax').textContent=S.maxo;
+  $('lSo').textContent=S.so+'%';
+  $('gridHint').textContent='≈ $'+(S.gridPips*0.10).toFixed(2).replace('.',',')+' de movimiento del oro entre cada orden.';
+  $('tpHint').textContent='≈ $'+(S.tpClasico*0.10).toFixed(2).replace('.',',')+' de retroceso para cerrar el canasto (órdenes 1-5).';
+  [...$('capChips').children].forEach(c=>c.classList.toggle('on',+c.dataset.cap===S.capital));
+  const cent=(S.oz==1);
+  $('centHint').textContent=cent?('En cuenta cent se muestra como '+nf(S.capital*100)+' USC en la plataforma.'):'';
+  const b=BROKERS[S.broker];
+  $('context').innerHTML=
+    '<span class="chip"><b>'+b.name+'</b></span>'+
+    '<span class="chip">Contrato: <b>'+(S.oz==1?'1 oz':'100 oz')+'/lote</b></span>'+
+    '<span class="chip">Stop-out <b>'+S.so+'%</b></span>'+
+    '<span class="chip">Capital <b>$'+nf(S.capital)+'</b></span>';
+  $('brokerHint').textContent=b.hint;
+}
+function badge(el,ok,textOk,textMiss){
+  el.textContent = ok?textOk:textMiss; el.className='badge '+(ok?'hit':'miss');
+}
+
+// ================= RENDER =================
+function render(){
+  readInputs(); syncLabels();
+
+  // --- motor determinista (peor caso, para grafico/tabla) ---
+  const gridUsd = S.gridPips*0.10;
+  const pDet={capital:S.capital,leverage:S.leverage,price:S.price,ozPerLot:S.oz,
+    lotsInicial:S.lote,mult:S.mult,maxOrdenes:S.maxo,grid:gridUsd,stopOut:S.so/100};
+  const r=simulate(pDet);
+
+  // --- motor analitico probabilistico ---
+  const sigmaDay = VOL_SCENARIOS[S.volKey];
+  const pAn={capital:S.capital,leverage:S.leverage,price:S.price,ozPerLot:S.oz,lotsInicial:S.lote,
+    mult:S.mult,maxOrdenes:S.maxo,gridPips:S.gridPips,tpClassicPips:S.tpClasico,stopOutPct:S.so,
+    hybridStart:5, sigmaDay, commissionPerLot:S.commission};
+  const f=AN_fullForecast(pAn);            // teorico: riesgo/margen/supervivencia (conservador)
+  const capMin=AN_capitalMinimo(S.ruinTarget,pAn);
+  const volMult = {baja:0.5, media:1.0, alta:2.0}[S.volKey];
+  const coverage = hourlyCoverage(S.horaInicio, S.horaFin);
+  const cyclesPerDayFinal = EMPIRICAL_CYCLES_PER_DAY*volMult*coverage;
+  const h=AN_hybridForecast(pAn, cyclesPerDayFinal);  // empirico: profit/frecuencia/operaciones
+
+  // ---- hero: profit esperado por ciclo (calibrado con historial real) ----
+  $('hProfitSign').textContent=h.EProfitCycle>=0?'$':'−$';
+  $('hProfit').textContent=Math.abs(h.EProfitCycle).toFixed(2);
+  const vEl=$('verdict');
+  if(h.EProfitCycle>=0){vEl.textContent='Valor esperado no negativo por ciclo (calibrado con historial real + comisión)';}
+  else{vEl.textContent='Valor esperado negativo por ciclo (calibrado con historial real + comisión)';}
+  vEl.style.color='var(--gold)';
+
+  // ---- panel de pronostico ----
+  $('fDD').textContent='$'+nf(f.EDd);
+  $('fMargin').textContent='$'+nf(f.EMargin);
+  $('fMarginSub').textContent=S.capital>0?((f.EMargin/S.capital*100).toFixed(1)+'% del capital, promedio ponderado (teórico)'):'';
+  $('fNOrders').textContent=h.EOrders.toFixed(2);
+  $('fMayor').textContent=h.mayorBasket;
+
+  $('fCapMinTarget').textContent=(S.ruinTarget+'').replace('.',',')+'%';
+  if(capMin===null){$('fCapMin').textContent='No alcanzable';}
+  else{$('fCapMin').textContent='$'+nf(capMin);}
+
+  const cyclesPerMonth=h.cyclesPerDay*21;
+  const survMonth=Math.pow(1-f.PRuin, cyclesPerMonth);
+  $('fSurvMonth').textContent=(survMonth*100).toFixed(1)+'%';
+  $('fSurvSub').textContent='a 1 mes (≈'+nf(cyclesPerMonth)+' ciclos) · '+(f.PRuin*100).toFixed(4)+'% de ruina por ciclo individual (teórico)';
+
+  $('fProfitDay').textContent=(h.EProfitDay>=0?'$':'−$')+nf2(Math.abs(h.EProfitDay));
+  $('fCyclesDay').textContent=nf(h.cyclesPerDay)+' ciclos/día (calibrado con historial, '+S.volKey+')';
+  $('fProfitMonth').textContent=(h.EProfitMonth>=0?'$':'−$')+nf(Math.abs(h.EProfitMonth));
+
+  // ---- insight dinamico ----
+  let insight='<b>Metodología:</b> este simulador combina dos motores. El <b>riesgo</b> (probabilidad de ruina, capital mínimo, margen, supervivencia) usa un modelo teórico conservador que asume mercado sin tendencia — no le regala ninguna ventaja a la estrategia, apropiado para dimensionar capital. '
+    +'El <b>comportamiento</b> (profit esperado, operaciones por ciclo, mayor basket, frecuencia diaria) usa la <b>distribución real observada en tu cuenta</b> (32240565), no un supuesto neutro — porque el oro real, en tu horario e instrumento, no se comporta como una moneda justa.'
+    +'<br><br><b>Calibrado con historial real</b> (14,5 días, 1.521 ciclos reconstruidos, 4.637 órdenes): '
+    +'órdenes medias por ciclo 3,05 (el modelo predice '+h.EOrders.toFixed(2)+'), '+nf(EMPIRICAL_CYCLES_PER_DAY)+' ciclos/día medidos directamente, comisión confirmada en $0,06/lote sin excepción en las 4.637 órdenes. '
+    +(h.calibracionValida?'':'<b>Aviso:</b> cambiaste la distancia entre órdenes o el TP clásico respecto al historial (10 y 21 pips) — la calibración de frecuencia/operaciones puede ya no ser representativa. ')
+    +'Con el lote, multiplicador y comisión actuales, el modelo indica un profit esperado de '+(h.EProfitCycle>=0?'+':'−')+'$'+Math.abs(h.EProfitCycle).toFixed(2)+' por ciclo ('+(h.EProfitDay>=0?'+':'−')+'$'+Math.abs(h.EProfitDay).toFixed(2)+'/día). '
+    +'El riesgo de ruina por ciclo sigue siendo bajo y teórico ('+(f.PRuin*100).toFixed(4)+'%), y al repetirse ≈'+nf(cyclesPerMonth)+' veces al mes se traduce en '+(survMonth*100).toFixed(1)+'% de probabilidad de supervivencia a 1 mes — esa parte del cálculo no asume ninguna ventaja a favor del sistema, precisamente para no subestimar el riesgo de cola.';
+  $('insight').innerHTML=insight;
+
+  // ---- objetivo financiero ----
+  const goalDaily=+$('goalDaily').value||0, goalMonthly=+$('goalMonthly').value||0, goalDD=+$('goalDD').value||0;
+  if(goalDaily>0) badge($('badgeDaily'), h.EProfitDay>=goalDaily, 'cumple', 'por debajo'); else badge($('badgeDaily'),null,'—','—');
+  if(goalMonthly>0) badge($('badgeMonthly'), h.EProfitMonth>=goalMonthly, 'cumple', 'por debajo'); else badge($('badgeMonthly'),null,'—','—');
+  const idxDD=Math.min(h.mayorBasket, f.Nreal-1);
+  const dd95 = f.levels[Math.max(idxDD,0)] ? f.levels[Math.max(idxDD,0)].floatingLoss : f.EDd;
+  if(goalDD>0) badge($('badgeDD'), dd95<=goalDD, 'cumple', 'excede'); else badge($('badgeDD'),null,'—','—');
+
+  // ---- sugerencias: que lote hace falta para cada objetivo ----
+  const sugg = (el, html) => { el.innerHTML = html; el.style.display = html?'block':'none'; };
+  if(goalDaily>0){
+    const s = solveLotForDailyProfit(goalDaily, pAn, cyclesPerDayFinal);
+    if(s.status==='unreachable'){
+      sugg($('suggDaily'), 'No alcanzable ajustando solo el lote con este capital: el máximo posible es <b>$'+s.ev.toFixed(2)+'/día</b> (lote ≈'+s.bestLot.toFixed(3)+'). Prueba con más capital, más multiplicador, o más distancia de TP.');
+    } else {
+      sugg($('suggDaily'), 'Sugerencia: lote inicial ≈ <b>'+s.lot.toFixed(3)+'</b> (hoy: '+S.lote.toFixed(2)+') para lograr ≈$'+s.ev.toFixed(2)+'/día, dejando el resto de parámetros igual.');
+    }
+  } else sugg($('suggDaily'),'');
+
+  if(goalMonthly>0){
+    const targetDailyFromMonthly = goalMonthly/21;
+    const s = solveLotForDailyProfit(targetDailyFromMonthly, pAn, cyclesPerDayFinal);
+    if(s.status==='unreachable'){
+      sugg($('suggMonthly'), 'No alcanzable ajustando solo el lote: el máximo posible es ≈$'+(s.ev*21).toFixed(0)+'/mes (lote ≈'+s.bestLot.toFixed(3)+').');
+    } else {
+      sugg($('suggMonthly'), 'Sugerencia: lote inicial ≈ <b>'+s.lot.toFixed(3)+'</b> (hoy: '+S.lote.toFixed(2)+') para lograr ≈$'+(s.ev*21).toFixed(0)+'/mes.');
+    }
+  } else sugg($('suggMonthly'),'');
+
+  if(goalDD>0){
+    const s = solveLotForMaxDD(goalDD, pAn);
+    if(s.status==='unreachable'){
+      sugg($('suggDD'), 'Incluso el lote mínimo (0,01) da un drawdown de ≈$'+s.dd.toFixed(2)+' en el percentil 95 — por encima de tu límite. Reduce el multiplicador o aumenta la distancia de TP.');
+    } else {
+      sugg($('suggDD'), 'Sugerencia: lote inicial hasta <b>'+s.lot.toFixed(3)+'</b> (hoy: '+S.lote.toFixed(2)+') mantiene el drawdown del percentil 95 en ≈$'+s.dd.toFixed(2)+', dentro de tu límite.');
+    }
+  } else sugg($('suggDD'),'');
+
+  // ---- detalle determinista (grafico + tabla, con P(TP aqui) del motor analitico) ----
+  $('sOrders').textContent=r.ordersOpened;
+  $('sOrdersSub').textContent='de '+S.maxo+' permitidas';
+  $('sStopX').textContent=(r.stopX&&isFinite(r.stopX))?'$'+r.stopX.toFixed(1):'∞';
+  const lossSO=r.floatingAtSO||0;
+  $('sLoss').textContent='$'+nf(lossSO);
+  $('sLossSub').textContent=(S.capital>0?Math.round(lossSO/S.capital*100):0)+'% del capital';
+  try{drawChart(r,S.capital);}catch(e){}
+  try{drawTable(r,f);}catch(e){}
+  $('cause').innerHTML='<b>Techo determinista:</b> '+r.ordersOpened+' órdenes antes de un movimiento en línea recta de $'+
+    (r.stopX&&isFinite(r.stopX)?r.stopX.toFixed(1):'∞')+' (escenario extremo, sin reversión).';
+  $('foot').innerHTML='El panel superior es el pronóstico probabilístico (asume oro sin tendencia direccional, movimiento tipo paseo aleatorio). '
+    +'Este panel inferior muestra el escenario determinista extremo: recorrido adverso en línea recta, sin ningún retroceso. '
+    +'SL individual ($100 por orden) queda por detrás del umbral de stop-out en ambos modelos. Total de lotes en el escenario extremo: <b>'+r.totalLots+'</b>. '
+    +'Nota: el preset vigente limita el EA a operar de 00:00 a 11:00 y cierra posiciones fuera de ese horario; este modelo aún asume operación continua (24h) y no incorpora ese cierre forzado por horario.';
+
+  saveState();
+}
+
+function chartSize(){
+  const el=$('chart'); let w=el.clientWidth||el.getBoundingClientRect().width||el.parentElement.clientWidth||320;
+  w=Math.max(280,Math.round(w)); const mobile=w<560;
+  const h=mobile?Math.round(w*0.86):Math.min(300,Math.round(w*0.42));
+  return {W:w,H:Math.max(220,h),mobile};
+}
+function drawChart(r,capital){
+  const {W,H,mobile}=chartSize();
+  const fs=mobile?12:11, fsSmall=mobile?11:10;
+  const mL=mobile?46:54, mR=14, mT=18, mB=mobile?40:36;
+  const plotW=W-mL-mR, plotH=H-mT-mB, xEnd=r.xEnd||1, yMax=capital||1;
+  const X=x=>mL+plotW*(x/xEnd), Y=val=>mT+plotH*(1-Math.max(0,Math.min(val,yMax))/yMax);
+  let s='';
+  for(let i=0;i<=4;i++){const val=yMax*i/4,y=Y(val);
+    s+=`<line x1="${mL}" y1="${y.toFixed(1)}" x2="${W-mR}" y2="${y.toFixed(1)}" stroke="#16212e"/>`;
+    s+=`<text x="${mL-7}" y="${y+3.5}" text-anchor="end" font-family="IBM Plex Mono" font-size="${fsSmall}" fill="#6f8398">$${nf(val)}</text>`;}
+  const nx=mobile?4:5;
+  for(let i=0;i<=nx;i++){const xv=xEnd*i/nx,x=X(xv);
+    s+=`<text x="${x.toFixed(1)}" y="${H-14}" text-anchor="middle" font-family="IBM Plex Mono" font-size="${fsSmall}" fill="#6f8398">$${xv.toFixed(xEnd<12?1:0)}</text>`;}
+  s+=`<text x="${mL+plotW/2}" y="${H-2}" text-anchor="middle" font-family="IBM Plex Sans" font-size="${fsSmall}" fill="#9db2ca">movimiento del oro en contra (USD)</text>`;
+
+  const sx=r.stopX;
+  if(sx&&isFinite(sx)&&sx<xEnd){const xs=X(sx);
+    s+=`<rect x="${xs.toFixed(1)}" y="${mT}" width="${(W-mR-xs).toFixed(1)}" height="${plotH}" fill="rgba(130,152,182,.13)"/>`;
+    s+=`<line x1="${xs.toFixed(1)}" y1="${mT}" x2="${xs.toFixed(1)}" y2="${mT+plotH}" stroke="var(--crimson)" stroke-width="1.5" stroke-dasharray="4 3"/>`;
+    s+=`<text x="${xs.toFixed(1)}" y="${mT+12}" text-anchor="${sx/xEnd>0.72?'end':'middle'}" font-family="IBM Plex Mono" font-size="${fs}" font-weight="600" fill="var(--crimson)">STOP-OUT $${sx.toFixed(sx<10?1:0)}</text>`;}
+
+  let area=`M ${X(0)} ${Y(r.curve[0].eq)}`;
+  r.curve.forEach(pt=>{area+=` L ${X(pt.x).toFixed(1)} ${Y(pt.eq).toFixed(1)}`;});
+  const lp=r.curve[r.curve.length-1];
+  area+=` L ${X(lp.x).toFixed(1)} ${Y(0).toFixed(1)} L ${X(0).toFixed(1)} ${Y(0).toFixed(1)} Z`;
+  s+=`<path d="${area}" fill="rgba(92,194,255,.08)"/>`;
+  let line=''; r.curve.forEach((pt,i)=>{line+=(i?' L ':'M ')+X(pt.x).toFixed(1)+' '+Y(pt.eq).toFixed(1);});
+  s+=`<path d="${line}" fill="none" stroke="var(--gold)" stroke-width="2.4"/>`;
+
+  const orders=r.orders, step=Math.max(1,Math.round(orders.length/(mobile?6:8)));
+  orders.forEach((o,i)=>{
+    if(i!==0&&i!==orders.length-1&&i%step!==0)return;
+    let a=0,b=0;for(let j=0;j<=i;j++){a+=orders[j].oz;b+=orders[j].oz*orders[j].e;}
+    const eq=capital-(a*o.e-b), cx=X(o.e), cy=Y(eq);
+    s+=`<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="3.2" fill="var(--ink)" stroke="var(--gold)" stroke-width="1.6"/>`;
+    if(i===0||i===orders.length-1)
+      s+=`<text x="${cx.toFixed(1)}" y="${(cy-9).toFixed(1)}" text-anchor="middle" font-family="IBM Plex Mono" font-size="${fsSmall}" fill="var(--gold-deep)">#${i+1}</text>`;
+  });
+  $('chart').innerHTML='<svg width="'+W+'" height="'+H+'" viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg">'+s+'</svg>';
+}
+
+function drawTable(r,f){
+  const pctAt=(orderNum)=>{
+    const idx=orderNum-1;
+    if(!f||!f.PTpAt||idx<0||idx>=f.PTpAt.length) return null;
+    return f.PTpAt[idx];
+  };
+  const p1=pctAt(1);
+  let rows=`<tr><td>1</td><td class="dim">0,0</td><td>${r.orders[0].lot.toFixed(2)}</td><td>${r.orders[0].lot.toFixed(2)}</td><td class="dim">—</td><td class="dim">—</td><td class="dim">—</td><td class="dim">—</td><td>${p1!==null?(p1*100).toFixed(2)+'%':'—'}</td></tr>`;
+  r.trace.forEach(t=>{
+    const pct=pctAt(t.order+1);
+    rows+=`<tr><td>${t.order+1}</td><td>${t.e.toFixed(t.e<10?1:0).replace('.',',')}</td>`
+      +`<td>${t.lot.toFixed(2)}</td><td>${t.cumLots.toFixed(2)}</td>`
+      +`<td>$${t.usedMargin.toFixed(2).replace('.',',')}</td><td>$${t.floatingLoss.toFixed(1).replace('.',',')}</td>`
+      +`<td>$${t.equity.toFixed(0)}</td><td>${t.marginLevel>9999?Math.round(t.marginLevel/1000)+'k':Math.round(t.marginLevel)}%</td>`
+      +`<td>${pct!==null?(pct*100).toFixed(2)+'%':'—'}</td></tr>`;});
+  $('tbody').innerHTML=rows;
+}
+
+// ================= EVENTOS =================
+['lote','mult','grid','tpClasico','price','maxo','commission','horaInicio','horaFin'].forEach(id=>$(id).addEventListener('input',render));
+document.querySelectorAll('.stp').forEach(b=>b.addEventListener('click',()=>{
+  const el=$(b.dataset.t), d=parseFloat(b.dataset.d);
+  let v=Math.round((+el.value+d)*100)/100;
+  v=Math.min(+el.max,Math.max(+el.min,v));
+  el.value=v; render();
+}));
+$('capital').addEventListener('input',render);
+$('so').addEventListener('input',()=>{S.so=+$('so').value; setBroker('custom',false); render();});
+$('capChips').addEventListener('click',e=>{const t=e.target.closest('.qchip');if(!t)return;$('capital').value=t.dataset.cap;render();});
+$('levSegs').addEventListener('click',e=>{const t=e.target.closest('.seg');if(!t)return;
+  [...$('levSegs').children].forEach(c=>c.classList.remove('on'));t.classList.add('on');S.leverage=+t.dataset.lev;render();});
+$('ozSegs').addEventListener('click',e=>{const t=e.target.closest('.seg');if(!t)return;
+  [...$('ozSegs').children].forEach(c=>c.classList.remove('on'));t.classList.add('on');S.oz=+t.dataset.oz;setBroker('custom',false);render();});
+$('volSegs').addEventListener('click',e=>{const t=e.target.closest('.seg');if(!t)return;
+  [...$('volSegs').children].forEach(c=>c.classList.remove('on'));t.classList.add('on');S.volKey=t.dataset.vol;render();});
+$('ruinTargetSegs').addEventListener('click',e=>{const t=e.target.closest('.seg');if(!t)return;
+  [...$('ruinTargetSegs').children].forEach(c=>c.classList.remove('on'));t.classList.add('on');S.ruinTarget=+t.dataset.rt;$('ruinTargetCustom').value=S.ruinTarget;render();});
+$('ruinTargetCustom').addEventListener('input',()=>{
+  const v=+$('ruinTargetCustom').value;
+  if(v>0){ S.ruinTarget=v; [...$('ruinTargetSegs').children].forEach(c=>c.classList.toggle('on', +c.dataset.rt===v)); render(); }
+});
+$('broker').addEventListener('change',e=>setBroker(e.target.value,true));
+['goalDaily','goalMonthly','goalDD'].forEach(id=>$(id).addEventListener('input',render));
+
+function setBroker(key,apply){
+  S.broker=key; $('broker').value=key; const b=BROKERS[key];
+  if(apply){
+    if(b.oz!==undefined){S.oz=b.oz;[...$('ozSegs').children].forEach(c=>c.classList.toggle('on',+c.dataset.oz===b.oz));}
+    if(b.so!==undefined){S.so=b.so;}
+    render();
+  }
+}
+
+$('exportPdf').addEventListener('click',()=>{
+  saveState();
+  try{
+    if(typeof window.print === 'function'){ window.print(); }
+    else { throw new Error('no print'); }
+  }catch(e){
+    alert('Tu navegador no permite exportar con este botón. En iPhone: toca el ícono de compartir (□↑) de Safari → "Imprimir" → separa los dedos (pellizco hacia afuera) sobre la vista previa para convertirla en PDF → comparte o guarda desde ahí.');
+  }
+});
+$('reset').addEventListener('click',()=>{
+  try{localStorage.removeItem(STORAGE_KEY);}catch(e){}
+  $('capital').value=1000;$('lote').value=0.1;$('mult').value=1.21;$('grid').value=10;$('tpClasico').value=21;
+  $('price').value=4000;$('maxo').value=50;$('so').value=50;$('commission').value=0.06;$('horaInicio').value=0;$('horaFin').value=11;S.leverage=100;S.oz=1;S.volKey='media';S.ruinTarget=1;
+  $('goalDaily').value=0;$('goalMonthly').value=0;$('goalDD').value=0;
+  [...$('levSegs').children].forEach(c=>c.classList.toggle('on',c.dataset.lev==='100'));
+  [...$('ozSegs').children].forEach(c=>c.classList.toggle('on',c.dataset.oz==='1'));
+  [...$('volSegs').children].forEach(c=>c.classList.toggle('on',c.dataset.vol==='media'));
+  [...$('ruinTargetSegs').children].forEach(c=>c.classList.toggle('on',c.dataset.rt==='1'));
+  $('ruinTargetCustom').value=1;
+  setBroker('vt_ecn_cent',false); render();
+});
+
+// ================= MEMORIA (persiste tus ajustes entre recargas/pestañas) =================
+const STORAGE_KEY='goldenEngineState_v1';
+const INPUT_IDS=['capital','lote','mult','grid','tpClasico','price','maxo','commission',
+  'horaInicio','horaFin','goalDaily','goalMonthly','goalDD','ruinTargetCustom','broker'];
+function saveState(){
+  try{
+    const vals={}; INPUT_IDS.forEach(id=>{const el=$(id); if(el) vals[id]=el.value;});
+    const extra={leverage:S.leverage,oz:S.oz,volKey:S.volKey,ruinTarget:S.ruinTarget,so:S.so};
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({vals,extra}));
+  }catch(e){/* almacenamiento no disponible: no pasa nada, sigue con los valores actuales */}
+}
+function loadState(){
+  try{
+    const raw=localStorage.getItem(STORAGE_KEY);
+    if(!raw) return false;
+    const {vals,extra}=JSON.parse(raw);
+    INPUT_IDS.forEach(id=>{if(vals[id]!==undefined && $(id)) $(id).value=vals[id];});
+    if(extra){
+      if(extra.leverage){S.leverage=extra.leverage;
+        [...$('levSegs').children].forEach(c=>c.classList.toggle('on',+c.dataset.lev===extra.leverage));}
+      if(extra.oz){S.oz=extra.oz;
+        [...$('ozSegs').children].forEach(c=>c.classList.toggle('on',+c.dataset.oz===extra.oz));}
+      if(extra.volKey){S.volKey=extra.volKey;
+        [...$('volSegs').children].forEach(c=>c.classList.toggle('on',c.dataset.vol===extra.volKey));}
+      if(extra.ruinTarget){S.ruinTarget=extra.ruinTarget;
+        [...$('ruinTargetSegs').children].forEach(c=>c.classList.toggle('on',+c.dataset.rt===extra.ruinTarget));}
+      if(extra.so!==undefined){S.so=extra.so; $('so').value=extra.so;}
+    }
+    if(vals.broker) setBroker(vals.broker,false);
+    return true;
+  }catch(e){ return false; }
+}
+
+let rz; window.addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(render,120);});
+window.addEventListener('orientationchange',()=>setTimeout(render,220));
+window.addEventListener('load',()=>setTimeout(render,60));
+if(window.ResizeObserver){try{new ResizeObserver(()=>{clearTimeout(rz);rz=setTimeout(render,60);}).observe($('chart'));}catch(e){}}
+requestAnimationFrame(()=>requestAnimationFrame(render));
+if(!loadState()) setBroker('vt_ecn_cent',false);
+render();
+</script>
+</body>
+</html>
