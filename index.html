@@ -192,6 +192,7 @@
   /* --- añadidos para el panel de pronostico / objetivo financiero --- */
   .fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--edge);
     border:1px solid var(--edge);border-radius:8px;overflow:hidden;margin-top:4px}
+  .fgrid3{grid-template-columns:repeat(3,1fr) !important}
   @media(max-width:760px){.fgrid{grid-template-columns:repeat(2,1fr)}}
   .fcell{background:var(--panel);padding:14px 15px}
   .fcell .k{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.1em;
@@ -236,7 +237,7 @@
   html,body{background:var(--ink) !important;}
   body::before{display:none} /* la rejilla de fondo no aporta en papel, se quita para legibilidad */
   .wrap{max-width:100%}
-  .signature{position:static !important;display:inline-block;margin-top:14px;background:transparent !important;border:none;box-shadow:none}
+  .signature{position:static !important;display:inline-block;margin-bottom:10px;background:transparent !important;border:none;box-shadow:none}
   .jsflag{display:none}
   .reset{display:none}
   details.adv{display:none} /* supuestos avanzados: no aportan a un reporte de resultados */
@@ -252,9 +253,10 @@
   /* Solo evitamos cortes en unidades PEQUEÑAS, donde si tiene sentido */
   .stat,.fcell,.chip,.goalrow{break-inside:avoid;page-break-inside:avoid}
   #goalCard,#horaField{break-inside:avoid;page-break-inside:avoid}
+  .keep-block{break-inside:avoid;page-break-inside:avoid}
   table{page-break-inside:auto}
   tr,td{background:var(--panel) !important}
-  th{background:var(--panel2) !important}
+  th{background:var(--panel2) !important;position:static !important;top:auto !important}
   thead{display:table-header-group} /* repite el encabezado de columnas en cada pagina */
   tr,td,th{break-inside:avoid !important;page-break-inside:avoid !important} /* ninguna fila se corta a la mitad */
   tbody tr{break-inside:avoid !important;page-break-inside:avoid !important;page-break-after:auto}
@@ -277,6 +279,7 @@
 </style>
 
 <body>
+<div class="signature">designed by <b>Mr. Melo</b></div>
 <div class="wrap">
   <header>
     <div class="masthead">
@@ -292,41 +295,84 @@
 
   <!-- ============ PRONOSTICO (motor probabilistico) ============ -->
   <div class="hero">
-    <div class="verdict" id="verdict"></div>
-    <div class="headline"><span class="cur" id="hProfitSign">$</span><span id="hProfit">0</span>
-      <small id="hProfitSub">profit esperado por ciclo, calibrado con tu historial real (incluye comisión)</small>
+    <div class="eyebrow" style="margin-bottom:10px">Resumen general</div>
+    <div class="keep-block">
+      <div class="verdict" id="verdict"></div>
+      <div class="headline"><span class="cur" id="hProfitSign">$</span><span id="hProfit">0</span>
+        <small id="hProfitSub">profit esperado por ciclo, calibrado con tu historial real (incluye comisión)</small>
+      </div>
     </div>
 
-    <div class="subhead">Pronóstico por ciclo</div>
-    <div class="fgrid">
-      <div class="fcell"><div class="k">DD esperado</div><div class="v" id="fDD">$0</div><div class="sub">pérdida flotante promedio al resolver</div></div>
-      <div class="fcell"><div class="k">Máximo margen usado</div><div class="v" id="fMargin">$0</div><div class="sub" id="fMarginSub">promedio ponderado</div></div>
-      <div class="fcell"><div class="k">Número medio de operaciones</div><div class="v accent" id="fNOrders">0</div><div class="sub">por ciclo</div></div>
-      <div class="fcell"><div class="k">Mayor basket (percentil 95)</div><div class="v accent" id="fMayor">0</div><div class="sub">órdenes en el 5% de ciclos más profundos</div></div>
+    <div class="keep-block">
+      <div class="subhead">Pronóstico por ciclo</div>
+      <div class="fgrid">
+        <div class="fcell"><div class="k">DD esperado</div><div class="v" id="fDD">$0</div><div class="sub">pérdida flotante promedio al resolver</div></div>
+        <div class="fcell"><div class="k">Máximo margen usado</div><div class="v" id="fMargin">$0</div><div class="sub" id="fMarginSub">promedio ponderado</div></div>
+        <div class="fcell"><div class="k">Número medio de operaciones</div><div class="v accent" id="fNOrders">0</div><div class="sub">por ciclo</div></div>
+        <div class="fcell"><div class="k">Mayor basket (percentil 95)</div><div class="v accent" id="fMayor">0</div><div class="sub">órdenes en el 5% de ciclos más profundos</div></div>
+      </div>
     </div>
 
-    <div class="subhead">Capital y horizonte</div>
-    <div class="fgrid">
-      <div class="fcell">
-        <div class="k">Capital mínimo necesario</div>
-        <div class="v accent" id="fCapMin">$0</div>
-        <div class="sub">para P(ruina) ≤ <span id="fCapMinTarget">1%</span> por ciclo</div>
+    <div class="keep-block">
+      <div class="subhead">Capital y horizonte</div>
+      <div class="fgrid">
+        <div class="fcell">
+          <div class="k">Capital mínimo necesario</div>
+          <div class="v accent" id="fCapMin">$0</div>
+          <div class="sub">para P(ruina) ≤ <span id="fCapMinTarget">1%</span> por ciclo</div>
+        </div>
+        <div class="fcell">
+          <div class="k">Probabilidad de supervivencia</div>
+          <div class="v accent" id="fSurvMonth">0%</div>
+          <div class="sub" id="fSurvSub">a 1 mes, sin tocar stop-out</div>
+        </div>
+        <div class="fcell">
+          <div class="k">Profit esperado / día</div>
+          <div class="v" id="fProfitDay">$0</div>
+          <div class="sub" id="fCyclesDay">0 ciclos/día (est.)</div>
+        </div>
+        <div class="fcell">
+          <div class="k">Profit esperado / mes</div>
+          <div class="v" id="fProfitMonth">$0</div>
+          <div class="sub">21 días operativos</div>
+        </div>
       </div>
-      <div class="fcell">
-        <div class="k">Probabilidad de supervivencia</div>
-        <div class="v accent" id="fSurvMonth">0%</div>
-        <div class="sub" id="fSurvSub">a 1 mes, sin tocar stop-out</div>
+    </div>
+
+    <div class="keep-block">
+      <div class="subhead">Techo determinista (escenario extremo, peor caso)</div>
+      <div class="fgrid fgrid3">
+        <div class="fcell"><div class="k">Techo de órdenes</div><div class="v gold" id="sOrders">0</div><div class="sub" id="sOrdersSub">de 50 permitidas</div></div>
+        <div class="fcell"><div class="k">Excursión al stop-out</div><div class="v" id="sStopX">$0</div><div class="sub">movimiento del oro en contra</div></div>
+        <div class="fcell"><div class="k">Pérdida en stop-out</div><div class="v" id="sLoss">$0</div><div class="sub" id="sLossSub">% del capital</div></div>
       </div>
-      <div class="fcell">
-        <div class="k">Profit esperado / día</div>
-        <div class="v" id="fProfitDay">$0</div>
-        <div class="sub" id="fCyclesDay">0 ciclos/día (est.)</div>
+    </div>
+
+    <div class="keep-block">
+      <div class="subhead">Frecuencia de mercado · comparación en vivo</div>
+      <div class="segs wrap4" id="volSegs">
+        <button type="button" class="seg" data-vol="baja">Baja · 0,5× frecuencia</button>
+        <button type="button" class="seg on" data-vol="media">Media · calibrado real</button>
+        <button type="button" class="seg" data-vol="alta">Alta · 2× frecuencia</button>
       </div>
-      <div class="fcell">
-        <div class="k">Profit esperado / mes</div>
-        <div class="v" id="fProfitMonth">$0</div>
-        <div class="sub">21 días operativos</div>
+      <div class="fgrid fgrid3" style="margin-top:8px">
+        <div class="fcell" id="volBajaCell">
+          <div class="k">Baja</div>
+          <div class="v" id="volBajaDay">$0/día</div>
+          <div class="sub" id="volBajaMonth">$0/mes</div>
+        </div>
+        <div class="fcell" id="volMediaCell">
+          <div class="k">Media (calibrado real)</div>
+          <div class="v" id="volMediaDay">$0/día</div>
+          <div class="sub" id="volMediaMonth">$0/mes</div>
+        </div>
+        <div class="fcell" id="volAltaCell">
+          <div class="k">Alta</div>
+          <div class="v" id="volAltaDay">$0/día</div>
+          <div class="sub" id="volAltaMonth">$0/mes</div>
+        </div>
       </div>
+      <p class="hint">Los tres se recalculan solos con cualquier cambio de parámetro, sin necesidad de tocar los botones. "Media" usa los ciclos/día medidos directamente en tu historial real (104,93/día sobre 14,5 días). Ninguno afecta la probabilidad de ruina por ciclo (esa es siempre teórica).</p>
     </div>
   </div>
 
@@ -364,6 +410,16 @@
   <div class="grid">
     <!-- ============ CONTROLES ============ -->
     <div>
+      <div class="card pad">
+        <div class="card-title">Cargar historial real (MT5)</div>
+        <p class="hint">Sube el archivo <b>ReportHistory-....html</b> exportado desde tu cuenta de MetaTrader 5 (Historial de cuenta → botón derecho → Guardar como informe → HTML). Cada archivo que subas se <b>combina</b> con lo ya calibrado — no lo reemplaza, así el simulador mejora con cada historial nuevo.</p>
+        <input type="file" id="historyFile" accept=".html,.htm" style="width:100%;margin:10px 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted)">
+        <button type="button" id="historyUploadBtn" class="reset" style="margin-bottom:8px">⭱ Cargar y combinar calibración</button>
+        <p class="hint" id="historyStatus" style="min-height:16px"></p>
+        <div id="historySummary" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);line-height:1.6;margin:8px 0"></div>
+        <button type="button" id="historyReset" class="reset" style="border-style:dashed">↺ Reiniciar calibración (valores de fábrica)</button>
+      </div>
+
       <div class="card pad">
         <div class="card-title">Bróker y cuenta</div>
 
@@ -487,15 +543,6 @@
         <details class="adv">
           <summary>Supuestos del modelo probabilístico</summary>
           <div class="field">
-            <label>Escenario de volatilidad del oro</label>
-            <div class="segs" id="volSegs">
-              <button type="button" class="seg" data-vol="baja">Baja · 0,5× frecuencia</button>
-              <button type="button" class="seg on" data-vol="media">Media · calibrado real</button>
-              <button type="button" class="seg" data-vol="alta">Alta · 2× frecuencia</button>
-            </div>
-            <p class="hint">"Media" usa los ciclos/día medidos directamente en tu historial real (104,93/día sobre 14,5 días). Baja/Alta simulan un mercado más lento o más rápido, para explorar sensibilidad. No afectan la probabilidad de ruina por ciclo (esa es siempre teórica).</p>
-          </div>
-          <div class="field">
             <label>Stop-out % (solo bróker "Personalizado") <span class="val" id="lSo">50%</span></label>
             <input type="range" id="so" min="0" max="100" step="5" value="50">
           </div>
@@ -535,12 +582,6 @@
           </div>
         </div>
 
-        <div class="stats" style="margin:2px 6px 14px">
-          <div class="stat"><div class="k">Techo de órdenes</div><div class="v gold" id="sOrders">0</div><div class="sub" id="sOrdersSub">de 50 permitidas</div></div>
-          <div class="stat"><div class="k">Excursión al stop-out</div><div class="v" id="sStopX">$0</div><div class="sub">movimiento del oro en contra</div></div>
-          <div class="stat"><div class="k">Pérdida en stop-out</div><div class="v warn" id="sLoss">$0</div><div class="sub" id="sLossSub">% del capital</div></div>
-        </div>
-
         <div id="chart"></div>
         <div class="cause" id="cause"></div>
       </div>
@@ -568,8 +609,6 @@
     <div class="insight" id="insight" style="border:none;background:transparent;padding:0;margin-top:0"></div>
   </div>
 </div>
-
-<div class="signature">designed by <b>Mr. Melo</b></div>
 
 <script>
 // ================= MOTOR DETERMINISTA (peor caso, validado) =================
@@ -714,25 +753,168 @@ const BROKERS={
 };
 const VOL_SCENARIOS={baja:40/1.596, media:70/1.596, alta:150/1.596};
 
-// ================= CALIBRACION EMPIRICA (historial real, cuenta 32240565) =================
-// 14.5 dias, 1521 ciclos reconstruidos. grid=10 pips, TP clasico=21 pips (coincide con preset vigente).
-const EMPIRICAL_N_DIST={1:455,2:371,3:240,4:147,5:118,6:57,7:41,8:31,9:26,10:13,
-  11:5,12:8,13:2,14:2,15:1,16:1,20:2,25:1};
-const EMPIRICAL_TOTAL=Object.values(EMPIRICAL_N_DIST).reduce((a,b)=>a+b,0); // 1521
-const EMPIRICAL_CYCLES_PER_DAY=104.93;
-const EMPIRICAL_GRID_PIPS=10, EMPIRICAL_TP_CLASSIC_PIPS=21;
-function empiricalP(n){ return (EMPIRICAL_N_DIST[n]||0)/EMPIRICAL_TOTAL; }
+// ================= CALIBRACION EMPIRICA (mutable: crece con cada historial subido) =================
+// Valores de fabrica: cuenta 32240565, 14.5 dias, 1521 ciclos reconstruidos, 4637 ordenes.
+// grid=10 pips, TP clasico=21 pips (coincide con el preset vigente).
+const EMP_DEFAULT = {
+  nDist: {1:455,2:371,3:240,4:147,5:118,6:57,7:41,8:31,9:26,10:13,
+          11:5,12:8,13:2,14:2,15:1,16:1,20:2,25:1},
+  hourlyDist: [0,51,50,106,130,91,62,57,86,79,81,67,55,38,64,96,125,136,80,54,13,0,0,0],
+  totalCycles: 1521,
+  totalDays: 14.49,
+  totalVolume: 166.34,       // suma real de lotes de las 4637 ordenes del historial original
+  gridPipsRef: 10,
+  tpClassicPipsRef: 21,
+  sources: 1                 // cuantos historiales distintos se han combinado
+};
+EMP_DEFAULT.totalCommission = 0.06*EMP_DEFAULT.totalVolume; // consistente con $0.06/lote confirmado
+let EMP = JSON.parse(JSON.stringify(EMP_DEFAULT));
+EMP.cyclesPerDay = 104.93;
+EMP.commissionPerLot = 0.06;
 
-// distribucion real de ciclos por hora de apertura (hora servidor), 24 valores, indice=hora
-const EMPIRICAL_HOURLY_DIST=[0,51,50,106,130,91,62,57,86,79,81,67,55,38,64,96,125,136,80,54,13,0,0,0];
+function empiricalP(n){ const t=EMP.totalCycles; return t>0 ? (EMP.nDist[n]||0)/t : 0; }
+
 function hourlyCoverage(horaInicio,horaFin){
   const hi=((horaInicio%24)+24)%24, hf=((horaFin%24)+24)%24;
   let hours=[];
   if(hf===hi) for(let h=0;h<24;h++) hours.push(h);
   else if(hf>hi) for(let h=hi;h<hf;h++) hours.push(h);
   else { for(let h=hi;h<24;h++) hours.push(h); for(let h=0;h<hf;h++) hours.push(h); }
-  const total=hours.reduce((s,h)=>s+EMPIRICAL_HOURLY_DIST[h],0);
-  return total/EMPIRICAL_TOTAL;
+  const total=hours.reduce((s,h)=>s+(EMP.hourlyDist[h]||0),0);
+  return EMP.totalCycles>0 ? total/EMP.totalCycles : 0;
+}
+
+// ================= CARGADOR DE HISTORIAL REAL (MT5 ReportHistory) =================
+function parseDateMT5(s){
+  const parts=s.trim().split(' ');
+  if(parts.length<2) return null;
+  const [y,mo,da]=parts[0].split('.').map(Number);
+  const [h,mi,se]=parts[1].split(':').map(Number);
+  if([y,mo,da,h,mi,se].some(isNaN)) return null;
+  return new Date(y,mo-1,da,h,mi,se);
+}
+
+function parseMT5Report(text){
+  const iStart=text.indexOf('Posiciones</b>');
+  if(iStart===-1) return {error:'No se encontró la sección "Posiciones" — ¿es un ReportHistory de MT5 exportado a HTML?'};
+  const iEnd=text.indexOf('Órdenes</b>', iStart);
+  const section = iEnd>iStart ? text.slice(iStart, iEnd) : text.slice(iStart);
+
+  const rowRe=/<tr[^>]*>([\s\S]*?)<\/tr>/g;
+  const cellRe=/<td[^>]*>([\s\S]*?)<\/td>/g;
+  const tagRe=/<[^>]+>/g;
+  const rows=[];
+  let m;
+  while((m=rowRe.exec(section))){
+    const cells=[];
+    let cm; cellRe.lastIndex=0;
+    while((cm=cellRe.exec(m[1]))){
+      cells.push(cm[1].replace(tagRe,'').replace(/&nbsp;/g,' ').trim());
+    }
+    if(cells.length>=13 && /^\d{4}\.\d{2}\.\d{2}/.test(cells[0])) rows.push(cells);
+  }
+  if(rows.length===0) return {error:'La sección "Posiciones" no tiene filas de operaciones reconocibles.'};
+
+  const num=s=>parseFloat((s||'0').replace(/\s/g,'').replace(/[^\d.\-]/g,''))||0;
+  const positions=rows.map(c=>({
+    openTime:c[0], type:(c[3]||'').toLowerCase(), comment:c[4]||'',
+    vol:num(c[5]), closeTime:c[9]||'', comm:num(c[11]), swap:num(c[12]), profit:num(c[13])
+  }));
+
+  const cycles=[]; const current={};
+  for(const p of positions){
+    const t=p.type;
+    if(p.comment.toLowerCase().includes('start')){
+      if(current[t]) cycles.push(current[t]);
+      current[t]={type:t, orders:[p]};
+    } else {
+      if(!current[t]) current[t]={type:t, orders:[]};
+      current[t].orders.push(p);
+    }
+  }
+  Object.values(current).forEach(c=>cycles.push(c));
+
+  const nCounts={}; const hourCounts=new Array(24).fill(0);
+  let totalVolume=0, totalCommission=0, minTime=null, maxTime=null, validCycles=0;
+  for(const c of cycles){
+    if(!c.orders || c.orders.length===0) continue;
+    const n=c.orders.length;
+    nCounts[n]=(nCounts[n]||0)+1;
+    validCycles++;
+    let t0=null,t1=null;
+    for(const o of c.orders){
+      const d0=parseDateMT5(o.openTime), d1=parseDateMT5(o.closeTime);
+      if(d0 && (!t0||d0<t0)) t0=d0;
+      if(d1 && (!t1||d1>t1)) t1=d1;
+      totalVolume+=o.vol; totalCommission+=Math.abs(o.comm);
+    }
+    if(t0){ hourCounts[t0.getHours()]++; if(!minTime||t0<minTime) minTime=t0; }
+    if(t1 && (!maxTime||t1>maxTime)) maxTime=t1;
+  }
+  if(validCycles===0 || !minTime || !maxTime) return {error:'No se pudieron reconstruir ciclos válidos de este archivo.'};
+  const days=Math.max((maxTime-minTime)/(1000*60*60*24), 0.05);
+
+  // nota: en cuentas cent (USC) los valores del reporte vienen en centavos de USD;
+  // se convierten a USD reales dividiendo entre 100, igual que el resto del simulador.
+  return {nCounts, hourCounts, totalCycles:validCycles, totalDays:days, totalVolume,
+          totalCommission:totalCommission/100, rangeStart:minTime, rangeEnd:maxTime};
+}
+
+const CALIB_KEY='goldenEngineCalibration_v1';
+function saveCalibration(){ try{ localStorage.setItem(CALIB_KEY, JSON.stringify(EMP)); }catch(e){} }
+function loadCalibration(){
+  try{
+    const raw=localStorage.getItem(CALIB_KEY);
+    if(!raw) return false;
+    const loaded=JSON.parse(raw);
+    if(loaded && loaded.nDist && loaded.totalCycles>0){ EMP=loaded; return true; }
+  }catch(e){}
+  return false;
+}
+
+function mergeCalibration(stats){
+  for(const n in stats.nCounts){ EMP.nDist[n]=(EMP.nDist[n]||0)+stats.nCounts[n]; }
+  for(let h=0;h<24;h++){ EMP.hourlyDist[h]=(EMP.hourlyDist[h]||0)+stats.hourCounts[h]; }
+  EMP.totalCycles+=stats.totalCycles;
+  EMP.totalDays+=stats.totalDays;
+  EMP.totalVolume+=stats.totalVolume;
+  EMP.totalCommission+=stats.totalCommission;
+  EMP.commissionPerLot = EMP.totalVolume>0 ? EMP.totalCommission/EMP.totalVolume : EMP.commissionPerLot;
+  EMP.cyclesPerDay = EMP.totalDays>0 ? EMP.totalCycles/EMP.totalDays : EMP.cyclesPerDay;
+  EMP.sources = (EMP.sources||1)+1;
+}
+
+function updateHistorySummary(){
+  const el=$('historySummary');
+  el.innerHTML = '<b style="color:var(--gold)">Calibración actual:</b> '+EMP.sources+' historial(es) combinado(s) · '
+    +nf2(EMP.totalDays)+' días totales · '+nf(EMP.totalCycles)+' ciclos · '
+    +nf(EMP.cyclesPerDay)+' ciclos/día · comisión $'+EMP.commissionPerLot.toFixed(3)+'/lote';
+}
+
+function handleHistoryUpload(){
+  const f=$('historyFile').files[0];
+  if(!f){ $('historyStatus').textContent='Elige primero un archivo (toca el campo de arriba).'; return; }
+  $('historyStatus').textContent='Leyendo '+f.name+'...';
+  f.arrayBuffer().then(buf=>{
+    let text;
+    try{
+      text=new TextDecoder('utf-16le').decode(buf);
+      if(!text.includes('Posiciones')) throw new Error('fallback');
+    }catch(e){
+      text=new TextDecoder('utf-8').decode(buf);
+    }
+    const res=parseMT5Report(text);
+    if(res.error){ $('historyStatus').textContent='⚠ '+res.error; return; }
+    mergeCalibration(res);
+    saveCalibration();
+    if($('commission')){ $('commission').value=Math.round(EMP.commissionPerLot*1000)/1000; }
+    updateHistorySummary();
+    $('historyStatus').textContent='✓ Combinado: +'+nf(res.totalCycles)+' ciclos, +'+res.totalDays.toFixed(1)+' días de este archivo.';
+    $('historyFile').value='';
+    render();
+  }).catch(err=>{
+    $('historyStatus').textContent='⚠ Error al leer el archivo: '+err.message;
+  });
 }
 
 function AN_hybridEvCycle(levels, commissionPerLot){
@@ -811,9 +993,9 @@ function AN_hybridForecast(p, cyclesPerDayOverride){
   let cum=0, mayorBasket=Nreal;
   for(let n=1;n<Nreal;n++){ cum+=empiricalP(n); if(cum>=0.95){mayorBasket=n; break;} }
 
-  const cpd = cyclesPerDayOverride!==undefined ? cyclesPerDayOverride : EMPIRICAL_CYCLES_PER_DAY;
+  const cpd = cyclesPerDayOverride!==undefined ? cyclesPerDayOverride : EMP.cyclesPerDay;
   const EProfitDay=EProfit*cpd, EProfitMonth=EProfitDay*21;
-  const calibracionValida = (p.gridPips===EMPIRICAL_GRID_PIPS && p.tpClassicPips===EMPIRICAL_TP_CLASSIC_PIPS);
+  const calibracionValida = (p.gridPips===EMP.gridPipsRef && p.tpClassicPips===EMP.tpClassicPipsRef);
 
   return {Nreal, EProfitCycle:EProfit, EOrders, mayorBasket, cyclesPerDay:cpd,
           EProfitDay, EProfitMonth, calibracionValida, pTailBeyond};
@@ -840,7 +1022,7 @@ function syncLabels(){
   const hf24 = S.horaFin===24?'24:00':String(S.horaFin).padStart(2,'0')+':00';
   $('lHoras').textContent=String(S.horaInicio).padStart(2,'0')+':00–'+hf24;
   const cov=hourlyCoverage(S.horaInicio,S.horaFin);
-  $('horasHint').textContent='Cobertura de la actividad real observada: '+(cov*100).toFixed(1)+'% del día ('+nf(EMPIRICAL_CYCLES_PER_DAY*cov)+' ciclos/día calibrados). Tu preset actual usa 00:00–11:00.';
+  $('horasHint').textContent='Cobertura de la actividad real observada: '+(cov*100).toFixed(1)+'% del día ('+nf(EMP.cyclesPerDay*cov)+' ciclos/día calibrados). Tu preset actual usa 00:00–11:00.';
   $('lGrid').textContent=S.gridPips+' pips';
   $('lTp').textContent=S.tpClasico+' pips';
   $('lPrice').textContent='$'+nf(S.price);
@@ -883,8 +1065,21 @@ function render(){
   const capMin=AN_capitalMinimo(S.ruinTarget,pAn);
   const volMult = {baja:0.5, media:1.0, alta:2.0}[S.volKey];
   const coverage = hourlyCoverage(S.horaInicio, S.horaFin);
-  const cyclesPerDayFinal = EMPIRICAL_CYCLES_PER_DAY*volMult*coverage;
+  const cyclesPerDayFinal = EMP.cyclesPerDay*volMult*coverage;
   const h=AN_hybridForecast(pAn, cyclesPerDayFinal);  // empirico: profit/frecuencia/operaciones
+
+  // ---- comparacion en vivo de los 3 escenarios de volatilidad (siempre visibles) ----
+  const volLabels={baja:'volBaja',media:'volMedia',alta:'volAlta'};
+  Object.entries({baja:0.5,media:1.0,alta:2.0}).forEach(([key,mult])=>{
+    const cpd=EMP.cyclesPerDay*mult*coverage;
+    const hh=(key===S.volKey)?h:AN_hybridForecast(pAn, cpd);
+    const day=hh.EProfitDay, month=hh.EProfitMonth;
+    $(volLabels[key]+'Day').textContent=(day>=0?'$':'−$')+nf2(Math.abs(day))+'/día';
+    $(volLabels[key]+'Month').textContent=(month>=0?'$':'−$')+nf(Math.abs(month))+'/mes';
+  });
+  ['Baja','Media','Alta'].forEach(k=>{
+    $(volLabels[k.toLowerCase()]+'Day').className='v'+(k.toLowerCase()===S.volKey?' accent':'');
+  });
 
   // ---- hero: profit esperado por ciclo (calibrado con historial real) ----
   $('hProfitSign').textContent=h.EProfitCycle>=0?'$':'−$';
@@ -918,7 +1113,7 @@ function render(){
   let insight='<b>Metodología:</b> este simulador combina dos motores. El <b>riesgo</b> (probabilidad de ruina, capital mínimo, margen, supervivencia) usa un modelo teórico conservador que asume mercado sin tendencia — no le regala ninguna ventaja a la estrategia, apropiado para dimensionar capital. '
     +'El <b>comportamiento</b> (profit esperado, operaciones por ciclo, mayor basket, frecuencia diaria) usa la <b>distribución real observada en tu cuenta</b> (32240565), no un supuesto neutro — porque el oro real, en tu horario e instrumento, no se comporta como una moneda justa.'
     +'<br><br><b>Calibrado con historial real</b> (14,5 días, 1.521 ciclos reconstruidos, 4.637 órdenes): '
-    +'órdenes medias por ciclo 3,05 (el modelo predice '+h.EOrders.toFixed(2)+'), '+nf(EMPIRICAL_CYCLES_PER_DAY)+' ciclos/día medidos directamente, comisión confirmada en $0,06/lote sin excepción en las 4.637 órdenes. '
+    +'órdenes medias por ciclo (el modelo predice '+h.EOrders.toFixed(2)+'), '+nf(EMP.cyclesPerDay)+' ciclos/día medidos directamente, comisión confirmada en $'+EMP.commissionPerLot.toFixed(2)+'/lote, calibrado con '+EMP.sources+' historial(es) subido(s) ('+EMP.totalDays.toFixed(1)+' días, '+nf(EMP.totalCycles)+' ciclos en total). '
     +(h.calibracionValida?'':'<b>Aviso:</b> cambiaste la distancia entre órdenes o el TP clásico respecto al historial (10 y 21 pips) — la calibración de frecuencia/operaciones puede ya no ser representativa. ')
     +'Con el lote, multiplicador y comisión actuales, el modelo indica un profit esperado de '+(h.EProfitCycle>=0?'+':'−')+'$'+Math.abs(h.EProfitCycle).toFixed(2)+' por ciclo ('+(h.EProfitDay>=0?'+':'−')+'$'+Math.abs(h.EProfitDay).toFixed(2)+'/día). '
     +'El riesgo de ruina por ciclo sigue siendo bajo y teórico ('+(f.PRuin*100).toFixed(4)+'%), y al repetirse ≈'+nf(cyclesPerMonth)+' veces al mes se traduce en '+(survMonth*100).toFixed(1)+'% de probabilidad de supervivencia a 1 mes — esa parte del cálculo no asume ninguna ventaja a favor del sistema, precisamente para no subestimar el riesgo de cola.';
@@ -1081,6 +1276,18 @@ function setBroker(key,apply){
   }
 }
 
+$('historyUploadBtn').addEventListener('click', handleHistoryUpload);
+$('historyReset').addEventListener('click', ()=>{
+  if(!confirm('¿Reiniciar la calibración a los valores de fábrica? Se perderán los historiales combinados.')) return;
+  EMP = JSON.parse(JSON.stringify(EMP_DEFAULT));
+  EMP.cyclesPerDay = 104.93; EMP.commissionPerLot = 0.06;
+  try{ localStorage.removeItem(CALIB_KEY); }catch(e){}
+  $('commission').value = 0.06;
+  updateHistorySummary();
+  $('historyStatus').textContent='Calibración reiniciada a valores de fábrica.';
+  render();
+});
+
 $('exportPdf').addEventListener('click',()=>{
   saveState();
   try{
@@ -1141,6 +1348,8 @@ window.addEventListener('orientationchange',()=>setTimeout(render,220));
 window.addEventListener('load',()=>setTimeout(render,60));
 if(window.ResizeObserver){try{new ResizeObserver(()=>{clearTimeout(rz);rz=setTimeout(render,60);}).observe($('chart'));}catch(e){}}
 requestAnimationFrame(()=>requestAnimationFrame(render));
+loadCalibration();
+updateHistorySummary();
 if(!loadState()) setBroker('vt_ecn_cent',false);
 render();
 </script>
