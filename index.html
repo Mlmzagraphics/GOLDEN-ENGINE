@@ -238,7 +238,6 @@
   body::before{display:none} /* la rejilla de fondo no aporta en papel, se quita para legibilidad */
   .wrap{max-width:100%}
   .signature{position:static !important;display:inline-block;margin-bottom:10px;background:transparent !important;border:none;box-shadow:none}
-  .jsflag{display:none}
   .reset{display:none}
   details.adv{display:none} /* supuestos avanzados: no aportan a un reporte de resultados */
   .grid{grid-template-columns:1fr !important;} /* una sola columna: evita que se corte contenido en la hoja */
@@ -288,7 +287,6 @@
     <div class="masthead">
       <div class="wordmark">GOLDEN <em>ENGINE</em></div>
       <div class="eyebrow">Modelo cuantitativo · Gestión de capital</div>
-      <div class="jsflag" id="jsflag">Vista estática · el JavaScript no se está ejecutando</div>
     </div>
     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
       <button type="button" id="exportPdf" class="reset" style="width:auto;margin:0;padding:9px 16px">⭳ Exportar a PDF</button>
@@ -1042,7 +1040,10 @@ function syncLabels(){
     '<span class="chip"><b>'+b.name+'</b></span>'+
     '<span class="chip">Contrato: <b>'+(S.oz==1?'1 oz':'100 oz')+'/lote</b></span>'+
     '<span class="chip">Stop-out <b>'+S.so+'%</b></span>'+
-    '<span class="chip">Capital <b>$'+nf(S.capital)+'</b></span>';
+    '<span class="chip">Capital <b>$'+nf(S.capital)+'</b></span>'+
+    '<span class="chip">Apalancamiento <b>1:'+nf(S.leverage)+'</b></span>'+
+    '<span class="chip">Lote inicial <b>'+S.lote.toFixed(2)+'</b></span>'+
+    '<span class="chip">Multiplicador <b>'+S.mult.toFixed(2)+'</b></span>';
   $('brokerHint').textContent=b.hint;
 }
 function badge(el,ok,textOk,textMiss){
